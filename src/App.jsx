@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from './firebase/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -20,8 +20,25 @@ import {
   saveStoredTickets, 
   createBorrowRequest, 
   updateTicketState, 
-  resetToInitialData 
+  resetToInitialData,
+  exportDataToCsv
 } from './data/mockStorage';
+
+import {
+  subscribeResources,
+  subscribeTickets,
+  loadResourcesFromFirestore,
+  loadTicketsFromFirestore,
+  seedResourcesToFirestore,
+  seedTicketsToFirestore,
+  createTicketOnFirestore,
+  updateTicketOnFirestore,
+  updateResourceOnFirestore,
+  resetFirestoreData
+} from './firebase/firestoreService';
+
+import { isFirebaseConfigured } from './firebase/config';
+import { INITIAL_RESOURCES, INITIAL_TICKETS } from './data/initialData';
 
 export default function App() {
   const { user, isAdmin: firebaseAdmin, isLoggedIn, loading, isConfigured } = useAuth();
@@ -30,10 +47,10 @@ export default function App() {
   const [resources, setResources] = useState(() => getStoredResources());
   const [tickets, setTickets] = useState(() => getStoredTickets());
   const [activeTab, setActiveTab] = useState('catalog');
-  // Khi chưa cấu hình Firebase → dùng toggle local; khi đã cấu hình → dùng role từ Firebase
   const [localAdmin, setLocalAdmin] = useState(false);
   const isAdmin = isConfigured ? firebaseAdmin : localAdmin;
   const [darkMode, setDarkMode] = useState(false);
+  const [firestoreReady, setFirestoreReady] = useState(false);
   
   // Modals
   const [borrowingResource, setBorrowingResource] = useState(null);
@@ -47,13 +64,57 @@ export default function App() {
     setToast({ message, type });
   };
 
-  // Sync resources and tickets to localStorage on change
+  // ===================================================================
+  // 🔥 Firestore Real-time Sync
+  // Khi Firebase đã cấu hình → dùng Firestore thay localStorage
+  // ===================================================================
   useEffect(() => {
-    saveStoredResources(resources);
+    if (!isFirebaseConfigured() || !isLoggedIn) return;
+
+    let unsubResources;
+    let unsubTickets;
+
+    const initFirestore = async () => {
+      // Kiểm tra xem Firestore đã có dữ liệu chưa
+      const existingResources = await loadResourcesFromFirestore();
+      if (!existingResources) {
+        // Chưa có → seed dữ liệu mẫu lên Firestore
+        console.log('🌱 Đang seed dữ liệu mẫu vào Firestore...');
+        await seedResourcesToFirestore(INITIAL_RESOURCES);
+        await seedTicketsToFirestore(INITIAL_TICKETS);
+      }
+
+      // Bật real-time listeners
+      unsubResources = subscribeResources((data) => {
+        setResources(data);
+      });
+
+      unsubTickets = subscribeTickets((data) => {
+        setTickets(data);
+      });
+
+      setFirestoreReady(true);
+    };
+
+    initFirestore();
+
+    return () => {
+      if (unsubResources) unsubResources();
+      if (unsubTickets) unsubTickets();
+    };
+  }, [isLoggedIn]);
+
+  // Sync to localStorage khi KHÔNG dùng Firestore (fallback offline)
+  useEffect(() => {
+    if (!isFirebaseConfigured()) {
+      saveStoredResources(resources);
+    }
   }, [resources]);
 
   useEffect(() => {
-    saveStoredTickets(tickets);
+    if (!isFirebaseConfigured()) {
+      saveStoredTickets(tickets);
+    }
   }, [tickets]);
 
   // Dark mode effect
@@ -65,12 +126,26 @@ export default function App() {
     }
   }, [darkMode]);
 
-  // Handle Borrow Submission
-  const handleBorrowSubmit = (formData) => {
+  // ===================================================================
+  // 📋 Handle Borrow — tạo phiếu mượn (lưu Firestore nếu có)
+  // ===================================================================
+  const handleBorrowSubmit = async (formData) => {
     try {
       const result = createBorrowRequest(formData, resources, tickets);
-      setResources(result.resources);
-      setTickets(result.tickets);
+      
+      if (isFirebaseConfigured() && firestoreReady) {
+        // Lưu phiếu mượn lên Firestore → Thủ thư sẽ thấy ngay!
+        await createTicketOnFirestore(result.ticket);
+        // Cập nhật số lượng resource trên Firestore
+        const updatedRes = result.resources.find(r => r.id === formData.resourceId);
+        if (updatedRes) {
+          await updateResourceOnFirestore(updatedRes);
+        }
+      } else {
+        setResources(result.resources);
+        setTickets(result.tickets);
+      }
+
       showToast(`Đã gửi yêu cầu mượn thành công! Mã: ${result.ticket.ticketCode}`, 'success');
       return result.ticket;
     } catch (err) {
@@ -80,34 +155,81 @@ export default function App() {
   };
 
   // Handle Approve Ticket
-  const handleApproveTicket = (ticketId) => {
-    const res = updateTicketState(ticketId, 'Đã duyệt', {}, resources, tickets);
-    setResources(res.resources);
-    setTickets(res.tickets);
+  const handleApproveTicket = async (ticketId) => {
+    if (isFirebaseConfigured() && firestoreReady) {
+      await updateTicketOnFirestore(ticketId, { status: 'Đã duyệt' });
+    } else {
+      const res = updateTicketState(ticketId, 'Đã duyệt', {}, resources, tickets);
+      setResources(res.resources);
+      setTickets(res.tickets);
+    }
     showToast('Đã duyệt yêu cầu mượn tài nguyên!', 'success');
   };
 
   // Handle Reject Ticket
-  const handleRejectTicket = (ticketId) => {
-    const res = updateTicketState(ticketId, 'Từ chối', {}, resources, tickets);
-    setResources(res.resources);
-    setTickets(res.tickets);
+  const handleRejectTicket = async (ticketId) => {
+    const ticket = tickets.find(t => t.id === ticketId);
+    if (isFirebaseConfigured() && firestoreReady) {
+      await updateTicketOnFirestore(ticketId, { status: 'Từ chối' });
+      // Hoàn trả số lượng kho
+      if (ticket) {
+        const resource = resources.find(r => r.id === ticket.resourceId);
+        if (resource) {
+          const newAvail = Math.min(resource.totalQty, resource.availableQty + (ticket.quantity || 1));
+          await updateResourceOnFirestore({ 
+            ...resource, 
+            availableQty: newAvail,
+            status: newAvail > 0 && resource.status === 'Đang mượn hết' ? 'Còn để mượn' : resource.status
+          });
+        }
+      }
+    } else {
+      const res = updateTicketState(ticketId, 'Từ chối', {}, resources, tickets);
+      setResources(res.resources);
+      setTickets(res.tickets);
+    }
     showToast('Đã từ chối phiếu mượn và hoàn trả lại số lượng kho!', 'info');
   };
 
   // Handle Return Ticket
-  const handleReturnTicket = (ticketId, options) => {
-    const res = updateTicketState(ticketId, 'Đã trả', options, resources, tickets);
-    setResources(res.resources);
-    setTickets(res.tickets);
+  const handleReturnTicket = async (ticketId, options) => {
+    const ticket = tickets.find(t => t.id === ticketId);
+    if (isFirebaseConfigured() && firestoreReady) {
+      await updateTicketOnFirestore(ticketId, { 
+        status: 'Đã trả',
+        returnDate: options?.returnDate || new Date().toISOString().split('T')[0],
+        conditionOnReturn: options?.conditionOnReturn || '',
+        ...(options?.note ? { note: `${ticket?.note || ''} | ${options.note}` } : {})
+      });
+      // Hoàn trả số lượng kho
+      if (ticket) {
+        const resource = resources.find(r => r.id === ticket.resourceId);
+        if (resource) {
+          const newAvail = Math.min(resource.totalQty, resource.availableQty + (ticket.quantity || 1));
+          await updateResourceOnFirestore({ 
+            ...resource, 
+            availableQty: newAvail,
+            status: newAvail > 0 && resource.status === 'Đang mượn hết' ? 'Còn để mượn' : resource.status
+          });
+        }
+      }
+    } else {
+      const res = updateTicketState(ticketId, 'Đã trả', options, resources, tickets);
+      setResources(res.resources);
+      setTickets(res.tickets);
+    }
     showToast('Đã hoàn tất thủ tục bàn giao và nhận lại tài nguyên!', 'success');
   };
 
   // Handle Reset Data
-  const handleResetData = () => {
-    const reset = resetToInitialData();
-    setResources(reset.resources);
-    setTickets(reset.tickets);
+  const handleResetData = async () => {
+    if (isFirebaseConfigured() && firestoreReady) {
+      await resetFirestoreData();
+    } else {
+      const reset = resetToInitialData();
+      setResources(reset.resources);
+      setTickets(reset.tickets);
+    }
     showToast('Đã khôi phục toàn bộ kho dữ liệu về trạng thái ban đầu!', 'success');
   };
 
