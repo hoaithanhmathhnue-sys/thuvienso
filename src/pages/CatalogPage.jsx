@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
   Search, 
   Filter, 
@@ -83,7 +83,7 @@ export default function CatalogPage({
         <div className="relative z-10 max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-blue-100 text-xs font-semibold border border-white/20">
             <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
-            Cổng Thông Tin Thư Viện & Thiết Bị Trường Học
+            Cổng Thông Tin Thư Viện & Thiết Bị Trường Học — Năm học 2026 - 2027
           </div>
 
           <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">

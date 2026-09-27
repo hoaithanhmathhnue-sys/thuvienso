@@ -7,6 +7,8 @@ THÔNG TIN TRƯỜNG & TÁC GIẢ
 - Trường: THPT Hoàng Diệu - TP.Cần Thơ
 - Địa chỉ: Số 1 Mạc Đĩnh Chi, phường Phú Lợi, thành phố Cần Thơ
 - Website trường: https://hoangdieust.vn/
+- Hotline: 0918939942
+- Năm học: 2026 - 2027
 - Thủ thư (Admin): Trần Thị Kim Thoa
 - Email admin: tranthikimthoa.c3hd@soctrang.edu.vn
 - Logo: file logo.jpg trong thư mục public

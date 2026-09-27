@@ -181,7 +181,7 @@ export default function DashboardPage({ resources, tickets, isAdmin, onViewTicke
               <TrendingUp className="w-5 h-5 text-teal-600 dark:text-teal-400" />
               Top Sách & Thiết Bị Được Khai Thác Nhiều Nhất
             </h3>
-            <span className="text-xs text-slate-400 font-medium">Học kỳ hiện tại</span>
+            <span className="text-xs text-teal-600 dark:text-teal-400 font-semibold">Năm học 2026 - 2027</span>
           </div>
 
           <div className="space-y-4">

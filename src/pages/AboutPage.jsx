@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { 
   BookOpen, 
   Sparkles, 
@@ -36,7 +36,7 @@ export default function AboutPage({ setActiveTab }) {
         </p>
 
         <p className="text-xs text-slate-500 italic">
-          Khẩu hiệu hành động: <strong className="text-slate-700 dark:text-slate-300">Học tập – Sáng tạo – Trưởng thành</strong>
+          Khẩu hiệu hành động: <strong className="text-slate-700 dark:text-slate-300">Học tập – Sáng tạo – Trưởng thành</strong> • Năm học 2026 - 2027
         </p>
       </div>
 
@@ -208,9 +208,9 @@ export default function AboutPage({ setActiveTab }) {
           <img src="/avatar.jpg" alt="GV. Trần Thị Kim Thoa" className="w-24 h-24 rounded-2xl object-cover shadow-lg border-2 border-teal-200 dark:border-teal-800" />
           <div className="text-center sm:text-left space-y-2">
             <h3 className="font-bold text-lg text-slate-900 dark:text-white">GV. Trần Thị Kim Thoa</h3>
-            <p className="text-sm text-teal-600 dark:text-teal-400 font-semibold">Trường THPT Hoàng Diệu</p>
+            <p className="text-sm text-teal-600 dark:text-teal-400 font-semibold">Trường THPT Hoàng Diệu — Năm học 2026 - 2027</p>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              Số 1 Mạc Đĩnh Chi, phường Phú Lợi, thành phố Cần Thơ
+              Số 1 Mạc Đĩnh Chi, phường Phú Lợi, thành phố Cần Thơ • Hotline: 0918939942
             </p>
             <p className="text-xs text-slate-600 dark:text-slate-500 italic">
               Người phát triển & quản trị hệ thống Thư Viện Số

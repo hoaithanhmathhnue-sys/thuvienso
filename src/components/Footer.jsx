@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { 
   BookOpen, 
   MapPin, 
@@ -52,7 +52,7 @@ export default function Footer({ setActiveTab }) {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-slate-500 shrink-0" />
-                <span>Hotline: <strong className="text-amber-400 font-bold">0292 3 832 456</strong></span>
+                <span>Hotline: <strong className="text-amber-400 font-bold">0918939942</strong></span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-slate-500 shrink-0" />
@@ -139,7 +139,7 @@ export default function Footer({ setActiveTab }) {
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} Bản quyền thuộc về <strong className="text-slate-300">Thư Viện Số THPT Hoàng Diệu</strong>. Thiết kế & phát triển bởi <a href="https://thuviensothpthoangdieu.vercel.app/" target="_blank" rel="noreferrer" className="text-teal-400 hover:underline">GV. Trần Thị Kim Thoa</a>.
+            © Năm học 2026 - 2027 • Bản quyền thuộc về <strong className="text-slate-300">Thư Viện Số THPT Hoàng Diệu</strong>. Thiết kế & phát triển bởi <a href="https://thuviensothpthoangdieu.vercel.app/" target="_blank" rel="noreferrer" className="text-teal-400 hover:underline">GV. Trần Thị Kim Thoa</a>.
           </div>
           <div className="flex items-center gap-4">
             <button type="button" onClick={() => setActiveTab('about')} className="hover:text-slate-300 transition-colors">

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { X, Printer, CheckCircle, Clock, AlertTriangle, FileText, QrCode } from 'lucide-react';
 
 export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
@@ -67,8 +67,11 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
               <h2 className="text-base font-extrabold uppercase text-slate-900 dark:text-white print:text-black">
                 HỆ THỐNG THƯ VIỆN & THIẾT BỊ DẠY HỌC
               </h2>
+              <p className="text-xs font-bold text-teal-700 dark:text-teal-400 print:text-black">
+                NĂM HỌC 2026 - 2027
+              </p>
               <p className="text-[11px] text-slate-700 dark:text-slate-400 print:text-black">
-                Hotline hỗ trợ: 0292 3 832 456 • Email: thuvien@thpthoangdieu.edu.vn
+                Hotline hỗ trợ: 0918939942 • Email: thuvien@thpthoangdieu.edu.vn
               </p>
             </div>
 

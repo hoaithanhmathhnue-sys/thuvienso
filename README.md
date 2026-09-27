@@ -45,7 +45,7 @@
 - Bài giới thiệu chuẩn theo tinh thần chuyển đổi số thư viện trường học của PDT Studio.
 - Sơ đồ bố trí trực quan: Khu vực Thư viện trung tâm (Tầng 2), Phòng thí nghiệm KHTN & STEM (Tầng 3), Kho thiết bị & Đồ dùng dạy học (Tầng 1).
 - Nội quy và hướng dẫn mượn trả tài nguyên trường học.
-- Thông tin hotline hỗ trợ (0236 3 888 999) và email phản hồi.
+- Thông tin hotline hỗ trợ (0918939942) và email phản hồi.
 
 ---
 
@@ -169,8 +169,8 @@ quan-ly-thu-vien-app/
 ---
 
 ## 📞 THÔNG TIN BẢN QUYỀN & HỖ TRỢ
-- **Hệ thống Quản lý Thư viện & Thiết bị Trường học**
-- Bản quyền thuộc về **Hệ thống Quản lý Thư viện**.
-- Thiết kế & chuyển giao công nghệ bởi **PDTSTUDIO** ([https://thcs.pdtstudio.store/](https://thcs.pdtstudio.store/)).
-- **Hotline hỗ trợ**: `0236 3 888 999`
-- **Email**: `webmaster@thcs.pdtstudio.store`
+- **Hệ thống Quản lý Thư viện & Thiết bị Trường học — Năm học 2026 - 2027**
+- Bản quyền thuộc về **Thư Viện Số THPT Hoàng Diệu**.
+- Phát triển bởi **GV. Trần Thị Kim Thoa**.
+- **Hotline hỗ trợ**: `0918939942`
+- **Email**: `thuvien@thpthoangdieu.edu.vn`
