@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   BookOpen, 
   Layers, 
@@ -10,8 +10,7 @@ import {
   Moon, 
   Menu, 
   X, 
-  PhoneCall, 
-  Mail, 
+  Globe, 
   Clock, 
   LogOut,
   User
@@ -44,15 +43,10 @@ export default function Navbar({
       <div className="bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-700 text-white text-xs py-1.5 px-4 shadow-inner">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center gap-4 flex-wrap">
-            <span className="flex items-center gap-1.5 font-medium">
-              <PhoneCall className="w-3.5 h-3.5 text-teal-200" />
-              Hotline: <strong className="text-amber-300">0292 3 832 456</strong>
-            </span>
-            <span className="hidden sm:inline-block text-teal-300">•</span>
-            <span className="flex items-center gap-1.5">
-              <Mail className="w-3.5 h-3.5 text-teal-200" />
-              thuvien@thpthoangdieu.edu.vn
-            </span>
+            <a href="https://hoangdieust.vn/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 font-medium hover:text-amber-300 transition-colors">
+              <Globe className="w-3.5 h-3.5 text-teal-200" />
+              Website: <strong className="text-amber-300">hoangdieust.vn</strong>
+            </a>
             <span className="hidden md:inline-block text-teal-300">•</span>
             <span className="hidden md:flex items-center gap-1.5 text-teal-100">
               <Clock className="w-3.5 h-3.5 text-teal-200" />
