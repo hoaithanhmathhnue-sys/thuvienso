@@ -118,21 +118,16 @@ export default function Navbar({
           <button 
             type="button"
             onClick={() => setActiveTab('catalog')}
-            className="flex items-center gap-3 text-left group"
+            className="flex items-center gap-2.5 text-left group shrink-0"
           >
-            <img src="/logo.jpg" alt="Logo THPT Hoàng Diệu" className="w-11 h-11 rounded-xl object-cover shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform" />
-            <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white">
-                  Thư Viện Số
-                </span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 font-semibold border border-teal-200 dark:border-teal-800">
-                  THPT Hoàng Diệu
-                </span>
-              </div>
-              <p className="text-xs text-slate-700 dark:text-slate-400 font-medium">
-                Trường THPT Hoàng Diệu — TP. Cần Thơ
-              </p>
+            <img src="/logo.jpg" alt="Logo THPT Hoàng Diệu" className="w-10 h-10 rounded-xl object-cover shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform" />
+            <div className="leading-tight">
+              <span className="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white block">
+                THƯ VIỆN SỐ
+              </span>
+              <span className="text-[11px] text-teal-700 dark:text-teal-300 font-semibold block">
+                THPT Hoàng Diệu - TP.Cần Thơ
+              </span>
             </div>
           </button>
 
