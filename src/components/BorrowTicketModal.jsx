@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { X, Printer, CheckCircle, Clock, AlertTriangle, FileText, QrCode } from 'lucide-react';
 
 export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
@@ -62,13 +62,13 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
           <div className="flex justify-between items-start border-b-2 border-slate-900 pb-4 text-center sm:text-left print:border-black">
             <div>
               <p className="text-xs uppercase font-semibold tracking-wider text-slate-600 dark:text-slate-400 print:text-black">
-                SỞ GIÁO DỤC VÀ ĐÀO TẠO • TRƯỜNG THCS CHUYỂN ĐỔI SỐ
+                SỞ GDĐT TP. CẦN THƠ • TRƯỜNG THPT HOÀNG DIỆU
               </p>
               <h2 className="text-base font-extrabold uppercase text-slate-900 dark:text-white print:text-black">
                 HỆ THỐNG THƯ VIỆN & THIẾT BỊ DẠY HỌC
               </h2>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 print:text-black">
-                Hotline hỗ trợ: 0236 3 888 999 • Email: webmaster@thcs.pdtstudio.store
+                Hotline hỗ trợ: 0292 3 832 456 • Email: thuvien@thpthoangdieu.edu.vn
               </p>
             </div>
 

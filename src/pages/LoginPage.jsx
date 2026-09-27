@@ -1,4 +1,4 @@
-// ===================================================================
+﻿// ===================================================================
 // 🔐 Trang Đăng Nhập / Đăng Ký — UI Teal Premium
 // ===================================================================
 import React, { useState } from 'react';
@@ -76,14 +76,12 @@ export default function LoginPage() {
       <div className="w-full max-w-md relative z-10">
         {/* Logo & Brand */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-teal-500 to-cyan-500 text-white shadow-xl shadow-teal-500/25 mb-4">
-            <BookOpen className="w-8 h-8" />
-          </div>
+          <img src="/logo.jpg" alt="Logo THPT Hoàng Diệu" className="w-16 h-16 rounded-2xl object-cover shadow-xl shadow-teal-500/25 mb-4 mx-auto" />
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Hệ thống Quản lý Thư viện
+            Thư Viện Số THPT Hoàng Diệu
           </h1>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 font-medium">
-            Kết nối sách & thiết bị dạy học trực tuyến
+            Trường THPT Hoàng Diệu — TP. Cần Thơ
           </p>
         </div>
 

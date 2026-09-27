@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
 import { 
   X, 
@@ -129,7 +129,7 @@ export default function BorrowModal({
             <div>
               <h2 className="text-lg font-bold">Đăng Ký Mượn Sách & Thiết Bị</h2>
               <p className="text-xs text-blue-100">
-                Phiếu đăng ký điện tử – Cổng Thư viện PDT Studio
+                Phiếu đăng ký điện tử – Thư Viện Số THPT Hoàng Diệu
               </p>
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function BorrowModal({
                 Đăng ký mượn thành công!
               </h3>
               <p className="text-sm text-slate-600 dark:text-slate-400">
-                Yêu cầu mượn của bạn đã được ghi nhận vào hệ thống quản lý thư viện.
+                Yêu cầu mượn của bạn đã được ghi nhận vào Thư Viện Số THPT Hoàng Diệu.
               </p>
             </div>
 
@@ -336,7 +336,7 @@ export default function BorrowModal({
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="email@thcs.pdtstudio.store"
+                    placeholder="email@thpthoangdieu.edu.vn"
                     className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none"
                   />
                 </div>

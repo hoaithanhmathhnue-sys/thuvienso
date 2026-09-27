@@ -1,4 +1,4 @@
-// Dữ liệu mẫu chuẩn của Hệ thống Quản lý Thư viện & Thiết bị Trường học (khảo sát từ quanlythuvien.pdtstudio.store)
+﻿// Dữ liệu mẫu chuẩn của Hệ thống Quản lý Thư viện & Thiết bị Trường học (khảo sát từ quanlythuvien.thpthoangdieu.edu.vn)
 
 export const RESOURCE_GROUPS = [
   'Tất cả nhóm',
@@ -305,7 +305,7 @@ export const INITIAL_TICKETS = [
     borrowerType: 'Học sinh',
     department: 'Lớp 8/2',
     phone: '0912 345 678',
-    email: 'mai.nh82@thcs.pdtstudio.edu.vn',
+    email: 'mai.nh82@thpthoangdieu.edu.vn',
     purpose: 'Đọc mở rộng chuyên đề lịch sử',
     borrowDate: '2026-09-27',
     dueDate: '2026-10-04',
@@ -326,7 +326,7 @@ export const INITIAL_TICKETS = [
     borrowerType: 'Giáo viên',
     department: 'Tổ Toán - KHTN (Phòng/Lớp: Lớp 7/1)',
     phone: '0905 123 456',
-    email: 'trung.pd@thcs.pdtstudio.edu.vn',
+    email: 'trung.pd@thpthoangdieu.edu.vn',
     purpose: 'Dạy học thực hành bài Axit - Bazơ',
     borrowDate: '2026-09-26',
     dueDate: '2026-10-01',
@@ -347,7 +347,7 @@ export const INITIAL_TICKETS = [
     borrowerType: 'Học sinh',
     department: 'CLB Robotics (Lớp 9/3)',
     phone: '0988 777 999',
-    email: 'triet.dm@thcs.pdtstudio.edu.vn',
+    email: 'triet.dm@thpthoangdieu.edu.vn',
     purpose: 'Luyện tập chuẩn bị giải STEM cấp Quận',
     borrowDate: '2026-09-27',
     dueDate: '2026-10-03',
@@ -368,7 +368,7 @@ export const INITIAL_TICKETS = [
     borrowerType: 'Giáo viên',
     department: 'Tổ Ngoại Ngữ',
     phone: '0935 222 333',
-    email: 'huong.ttt@thcs.pdtstudio.edu.vn',
+    email: 'huong.ttt@thpthoangdieu.edu.vn',
     purpose: 'Tiết học Tiếng Anh tương tác trực tuyến',
     borrowDate: '2026-09-25',
     dueDate: '2026-09-25',
@@ -389,7 +389,7 @@ export const INITIAL_TICKETS = [
     borrowerType: 'Cán bộ / Đoàn Đội',
     department: 'Ban Thi đua & Hoạt động Ngoài giờ',
     phone: '0977 444 555',
-    email: 'hung.lv@thcs.pdtstudio.edu.vn',
+    email: 'hung.lv@thpthoangdieu.edu.vn',
     purpose: 'Tổ chức sinh hoạt chuyên đề an toàn giao thông',
     borrowDate: '2026-09-20',
     dueDate: '2026-09-22',

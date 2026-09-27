@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { 
   ShieldCheck, 
   Plus, 
@@ -163,7 +163,7 @@ export default function AdminManagerPage({
           <button
             type="button"
             onClick={() => {
-              if (window.confirm('Khôi phục toàn bộ kho sách và phiếu mượn về dữ liệu ban đầu từ PDT Studio?')) {
+              if (window.confirm('Khôi phục toàn bộ kho sách và phiếu mượn về dữ liệu ban đầu từ THPT Hoàng Diệu?')) {
                 onResetData();
               }
             }}

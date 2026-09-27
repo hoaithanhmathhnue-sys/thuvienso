@@ -24,11 +24,11 @@ export default function AboutPage({ setActiveTab }) {
       <div className="text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 text-xs font-semibold border border-teal-200 dark:border-teal-800">
           <Sparkles className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-          Giới thiệu Hệ Thống Quản Lý Thư Viện Trường Học
+          Giới thiệu Thư Viện Số
         </div>
 
         <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          HỆ THỐNG QUẢN LÝ THƯ VIỆN TRƯỜNG HỌC
+          THƯ VIỆN SỐ TRƯỜNG THPT HOÀNG DIỆU
         </h1>
 
         <p className="text-base sm:text-lg text-teal-600 dark:text-teal-400 font-semibold max-w-2xl mx-auto">
@@ -40,11 +40,11 @@ export default function AboutPage({ setActiveTab }) {
         </p>
       </div>
 
-      {/* Main Philosophy Article (Extract from real PDT Studio site) */}
+      {/* Main Philosophy Article */}
       <section className="bg-white dark:bg-slate-800 p-6 sm:p-10 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-6 text-sm sm:text-base leading-relaxed text-slate-700 dark:text-slate-300">
         
         <p>
-          Một thư viện trường học hấp dẫn không chỉ có nhiều sách hay mà còn giúp học sinh dễ dàng tìm được cuốn sách mình cần. Với mong muốn nâng cao chất lượng phục vụ và từng bước đổi mới hoạt động thư viện, nhà trường giới thiệu <strong>Hệ thống quản lý thư viện trường học</strong> – công cụ hỗ trợ quản lý và khai thác tài nguyên thư viện trên môi trường số.
+          Một thư viện trường học hấp dẫn không chỉ có nhiều sách hay mà còn giúp học sinh dễ dàng tìm được cuốn sách mình cần. Với mong muốn nâng cao chất lượng phục vụ và từng bước đổi mới hoạt động thư viện, nhà trường giới thiệu <strong>Thư Viện Số THPT Hoàng Diệu trường học</strong> – công cụ hỗ trợ quản lý và khai thác tài nguyên thư viện trên môi trường số.
         </p>
 
         <p>
@@ -61,7 +61,7 @@ export default function AboutPage({ setActiveTab }) {
         </p>
 
         <p className="font-semibold text-slate-900 dark:text-white">
-          Hệ thống quản lý thư viện trường học là một bước đi thiết thực trong quá trình chuyển đổi số của nhà trường, hướng tới mục tiêu xây dựng thư viện hiện đại, thân thiện và luôn mở rộng cánh cửa tri thức cho mỗi học sinh.
+          Thư Viện Số THPT Hoàng Diệu trường học là một bước đi thiết thực trong quá trình chuyển đổi số của nhà trường, hướng tới mục tiêu xây dựng thư viện hiện đại, thân thiện và luôn mở rộng cánh cửa tri thức cho mỗi học sinh.
         </p>
 
       </section>
@@ -128,7 +128,7 @@ export default function AboutPage({ setActiveTab }) {
             </p>
           </div>
           <span className="text-xs px-2.5 py-1 rounded-full bg-teal-50 dark:bg-teal-950 text-teal-600 dark:text-teal-400 font-semibold border border-teal-200 dark:border-teal-800">
-            Tòa nhà Tri Thức
+            Tòa nhà chính
           </span>
         </div>
 
@@ -200,6 +200,23 @@ export default function AboutPage({ setActiveTab }) {
             <span><strong>Kiểm tra khi hoàn trả:</strong> Khi bàn giao trả sách/thiết bị, thủ thư sẽ đối chiếu tình trạng thực tế và ghi nhận vào phiếu điện tử xác nhận hoàn tất.</span>
           </li>
         </ul>
+      </section>
+
+      {/* Author Section */}
+      <section className="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-xs">
+        <div className="flex flex-col sm:flex-row items-center gap-6">
+          <img src="/avatar.jpg" alt="GV. Trần Thị Kim Thoa" className="w-24 h-24 rounded-2xl object-cover shadow-lg border-2 border-teal-200 dark:border-teal-800" />
+          <div className="text-center sm:text-left space-y-2">
+            <h3 className="font-bold text-lg text-slate-900 dark:text-white">GV. Trần Thị Kim Thoa</h3>
+            <p className="text-sm text-teal-600 dark:text-teal-400 font-semibold">Trường THPT Hoàng Diệu</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              Số 1 Mạc Đĩnh Chi, phường Phú Lợi, thành phố Cần Thơ
+            </p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 italic">
+              Người phát triển & quản trị hệ thống Thư Viện Số
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Call to action */}

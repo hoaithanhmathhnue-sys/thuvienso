@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { 
   BookOpen, 
   Layers, 
@@ -46,12 +46,12 @@ export default function Navbar({
           <div className="flex items-center gap-4 flex-wrap">
             <span className="flex items-center gap-1.5 font-medium">
               <PhoneCall className="w-3.5 h-3.5 text-teal-200" />
-              Hotline: <strong className="text-amber-300">0236 3 888 999</strong>
+              Hotline: <strong className="text-amber-300">0292 3 832 456</strong>
             </span>
             <span className="hidden sm:inline-block text-teal-300">•</span>
             <span className="flex items-center gap-1.5">
               <Mail className="w-3.5 h-3.5 text-teal-200" />
-              webmaster@thcs.pdtstudio.store
+              thuvien@thpthoangdieu.edu.vn
             </span>
             <span className="hidden md:inline-block text-teal-300">•</span>
             <span className="hidden md:flex items-center gap-1.5 text-teal-100">
@@ -126,20 +126,18 @@ export default function Navbar({
             onClick={() => setActiveTab('catalog')}
             className="flex items-center gap-3 text-left group"
           >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform">
-              <BookOpen className="w-6 h-6" />
-            </div>
+            <img src="/logo.jpg" alt="Logo THPT Hoàng Diệu" className="w-11 h-11 rounded-xl object-cover shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform" />
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white">
-                  Thư Viện & Thiết Bị
+                  Thư Viện Số
                 </span>
                 <span className="text-[10px] px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 font-semibold border border-teal-200 dark:border-teal-800">
-                  PDT Studio
+                  THPT Hoàng Diệu
                 </span>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                Kết nối sách & thiết bị dạy học trực tuyến
+                Trường THPT Hoàng Diệu — TP. Cần Thơ
               </p>
             </div>
           </button>

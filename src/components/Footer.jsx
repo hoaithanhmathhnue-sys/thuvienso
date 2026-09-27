@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { 
   BookOpen, 
   MapPin, 
@@ -20,12 +20,10 @@ export default function Footer({ setActiveTab }) {
           {/* Column 1: Brand & Slogan */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-teal-500/30">
-                <BookOpen className="w-5 h-5" />
-              </div>
+              <img src="/logo.jpg" alt="Logo THPT Hoàng Diệu" className="w-10 h-10 rounded-xl object-cover shadow-lg shadow-teal-500/30" />
               <div>
-                <h3 className="text-white font-bold text-base tracking-tight">Hệ thống Quản lý Thư viện</h3>
-                <p className="text-xs text-teal-400 font-medium">PDT Studio Education</p>
+                <h3 className="text-white font-bold text-base tracking-tight">Thư Viện Số THPT Hoàng Diệu</h3>
+                <p className="text-xs text-teal-400 font-medium">GV. Trần Thị Kim Thoa</p>
               </div>
             </div>
 
@@ -50,19 +48,19 @@ export default function Footer({ setActiveTab }) {
             <ul className="space-y-2.5 text-xs text-slate-400">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
-                <span>Khuôn viên Trường THCS - Khu Thư viện & Thiết bị Tầng 2, Tòa nhà Tri Thức</span>
+                <span>Số 1 Mạc Đĩnh Chi, phường Phú Lợi, thành phố Cần Thơ</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-slate-500 shrink-0" />
-                <span>Hotline: <strong className="text-amber-400 font-bold">0236 3 888 999</strong></span>
+                <span>Hotline: <strong className="text-amber-400 font-bold">0292 3 832 456</strong></span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-slate-500 shrink-0" />
-                <span>Email: <a href="mailto:webmaster@thcs.pdtstudio.store" className="hover:text-teal-400 transition-colors">webmaster@thcs.pdtstudio.store</a></span>
+                <span>Email: <a href="mailto:thuvien@thpthoangdieu.edu.vn" className="hover:text-teal-400 transition-colors">thuvien@thpthoangdieu.edu.vn</a></span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Globe className="w-4 h-4 text-slate-500 shrink-0" />
-                <span>Cổng thông tin: <a href="https://quanlythuvien.pdtstudio.store" target="_blank" rel="noreferrer" className="text-teal-400 hover:underline">quanlythuvien.pdtstudio.store</a></span>
+                <span>Cổng thông tin: <a href="https://thuviensothpthoangdieu.vercel.app" target="_blank" rel="noreferrer" className="text-teal-400 hover:underline">thuviensothpthoangdieu.vercel.app</a></span>
               </li>
             </ul>
           </div>
@@ -122,7 +120,7 @@ export default function Footer({ setActiveTab }) {
             <div className="bg-slate-800 p-3 rounded-xl border border-slate-700 flex items-center gap-3">
               <div className="w-16 h-16 bg-white rounded-lg p-1.5 flex items-center justify-center shrink-0">
                 <img 
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://quanlythuvien.pdtstudio.store" 
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://thuviensothpthoangdieu.vercel.app" 
                   alt="QR Code Cổng thư viện" 
                   className="w-full h-full object-contain"
                 />
@@ -141,7 +139,7 @@ export default function Footer({ setActiveTab }) {
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} Bản quyền thuộc về <strong className="text-slate-300">Hệ thống quản lý thư viện</strong>. Thiết kế & phát triển chuẩn công nghệ số bởi <a href="https://thcs.pdtstudio.store/" target="_blank" rel="noreferrer" className="text-teal-400 hover:underline">PDTSTUDIO</a>.
+            © {new Date().getFullYear()} Bản quyền thuộc về <strong className="text-slate-300">Thư Viện Số THPT Hoàng Diệu</strong>. Thiết kế & phát triển bởi <a href="https://thuviensothpthoangdieu.vercel.app/" target="_blank" rel="noreferrer" className="text-teal-400 hover:underline">GV. Trần Thị Kim Thoa</a>.
           </div>
           <div className="flex items-center gap-4">
             <button type="button" onClick={() => setActiveTab('about')} className="hover:text-slate-300 transition-colors">
