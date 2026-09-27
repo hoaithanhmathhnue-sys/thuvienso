@@ -80,7 +80,7 @@ export default function LoginPage() {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Thư Viện Số THPT Hoàng Diệu
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 font-medium">
+          <p className="text-sm text-slate-700 dark:text-slate-400 mt-2 font-medium">
             Trường THPT Hoàng Diệu — TP. Cần Thơ
           </p>
         </div>
@@ -259,7 +259,7 @@ export default function LoginPage() {
 
         {/* Footer note */}
         <div className="text-center mt-6">
-          <p className="text-xs text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1.5">
+          <p className="text-xs text-slate-700 dark:text-slate-400 flex items-center justify-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-teal-500" />
             Được bảo mật bởi Firebase Authentication
           </p>

@@ -151,7 +151,7 @@ export default function CatalogPage({
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                     isActive
                       ? 'bg-teal-600 text-white shadow-sm shadow-teal-500/20'
-                      : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-650'
+                      : 'bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-650'
                   }`}
                 >
                   {group}
@@ -194,7 +194,7 @@ export default function CatalogPage({
           
           {/* Category Dropdown */}
           <div>
-            <label className="block text-slate-500 dark:text-slate-400 font-medium mb-1">
+            <label className="block text-slate-700 dark:text-slate-400 font-medium mb-1">
               Phân loại chuyên mục
             </label>
             <select
@@ -210,7 +210,7 @@ export default function CatalogPage({
 
           {/* Sort By Dropdown */}
           <div>
-            <label className="block text-slate-500 dark:text-slate-400 font-medium mb-1">
+            <label className="block text-slate-700 dark:text-slate-400 font-medium mb-1">
               Sắp xếp theo
             </label>
             <select
@@ -244,7 +244,7 @@ export default function CatalogPage({
             <button
               type="button"
               onClick={handleResetFilters}
-              className="w-full py-2 px-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 font-semibold flex items-center justify-center gap-1.5 transition-colors"
+              className="w-full py-2 px-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-300 font-semibold flex items-center justify-center gap-1.5 transition-colors"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               Đặt lại bộ lọc
@@ -254,7 +254,7 @@ export default function CatalogPage({
         </div>
 
         {/* Status Counter */}
-        <div className="flex justify-between items-center text-xs text-slate-500 dark:text-slate-400 pt-1">
+        <div className="flex justify-between items-center text-xs text-slate-700 dark:text-slate-400 pt-1">
           <span>
             Tìm thấy: <strong className="text-teal-600 dark:text-teal-400 font-bold">{filteredResources.length}</strong> kết quả phù hợp
           </span>
@@ -292,7 +292,7 @@ export default function CatalogPage({
         <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-xs">
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-left">
-              <thead className="bg-slate-100 dark:bg-slate-750 text-slate-600 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-slate-700">
+              <thead className="bg-slate-100 dark:bg-slate-750 text-slate-800 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-slate-700">
                 <tr>
                   <th className="py-3 px-4 w-24">Mã tài nguyên</th>
                   <th className="py-3 px-4 min-w-[220px]">Tên sách / Thiết bị</th>
@@ -337,10 +337,10 @@ export default function CatalogPage({
                           {resource.group}
                         </span>
                       </td>
-                      <td className="py-3 px-3 text-slate-600 dark:text-slate-400">
+                      <td className="py-3 px-3 text-slate-700 dark:text-slate-400">
                         {resource.category}
                       </td>
-                      <td className="py-3 px-4 text-slate-600 dark:text-slate-400 font-medium">
+                      <td className="py-3 px-4 text-slate-700 dark:text-slate-400 font-medium">
                         {resource.location}
                       </td>
                       <td className="py-3 px-3 text-center font-bold">
@@ -360,7 +360,7 @@ export default function CatalogPage({
                           <button
                             type="button"
                             onClick={() => onDetail(resource)}
-                            className="px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 text-[11px] font-semibold text-slate-600 dark:text-slate-300"
+                            className="px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 text-[11px] font-semibold text-slate-800 dark:text-slate-300"
                           >
                             Xem
                           </button>
@@ -401,7 +401,7 @@ function EmptyState({ onReset }) {
         <h3 className="font-bold text-base text-slate-900 dark:text-white">
           Không tìm thấy tài nguyên phù hợp
         </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+        <p className="text-xs text-slate-700 dark:text-slate-400 max-w-md mx-auto">
           Không có sách hoặc thiết bị nào khớp với từ khóa hoặc bộ lọc đã chọn. Hãy thử tìm kiếm với từ khóa khác hoặc đặt lại bộ lọc.
         </p>
       </div>

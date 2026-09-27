@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Tailwind CSS v4: Bật dark mode dựa trên class (thay vì prefers-color-scheme) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
     /* 🎨 Teal Color System — Tươi sáng, hiện đại */

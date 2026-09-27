@@ -136,7 +136,7 @@ export default function Navbar({
                   THPT Hoàng Diệu
                 </span>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+              <p className="text-xs text-slate-700 dark:text-slate-400 font-medium">
                 Trường THPT Hoàng Diệu — TP. Cần Thơ
               </p>
             </div>
@@ -157,7 +157,7 @@ export default function Navbar({
                   className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-all relative ${
                     isActive
                       ? 'bg-teal-50 dark:bg-teal-950/70 text-teal-600 dark:text-teal-400 font-semibold shadow-xs'
-                      : 'text-slate-600 dark:text-slate-300 hover:bg-teal-50/50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
+                      : 'text-slate-800 dark:text-slate-300 hover:bg-teal-50/50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   <Icon className={`w-4 h-4 ${isActive ? 'text-teal-600 dark:text-teal-400' : 'text-slate-400'}`} />
@@ -181,7 +181,7 @@ export default function Navbar({
             <button
               type="button"
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-lg text-slate-700 dark:text-slate-400 hover:bg-teal-50 dark:hover:bg-slate-800 transition-colors"
               title={darkMode ? 'Chuyển sang giao diện Sáng' : 'Chuyển sang giao diện Tối'}
             >
               {darkMode ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-slate-600" />}
@@ -190,7 +190,7 @@ export default function Navbar({
             {/* Role indicator badge */}
             <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-50 dark:bg-slate-800 border border-teal-200 dark:border-slate-700 text-xs">
               <span className={`w-2 h-2 rounded-full ${isAdmin ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500'}`}></span>
-              <span className="text-slate-600 dark:text-slate-300 font-medium">
+              <span className="text-slate-800 dark:text-slate-300 font-medium">
                 {isAdmin ? 'Quyền: Thủ thư' : 'Chế độ: Độc giả'}
               </span>
             </div>
@@ -199,7 +199,7 @@ export default function Navbar({
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-slate-800"
+              className="md:hidden p-2 rounded-lg text-slate-800 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-slate-800"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

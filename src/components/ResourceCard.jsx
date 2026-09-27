@@ -103,7 +103,7 @@ export default function ResourceCard({ resource, onBorrow, onDetail }) {
         </h3>
 
         {/* Metadata info */}
-        <div className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 mb-3 flex-1">
+        <div className="space-y-1.5 text-xs text-slate-700 dark:text-slate-400 mb-3 flex-1">
           <div className="flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
             <span className="truncate font-medium">{resource.location}</span>
@@ -145,7 +145,7 @@ export default function ResourceCard({ resource, onBorrow, onDetail }) {
             className={`w-full py-2 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-xs ${
               isAvailable 
                 ? 'bg-teal-600 hover:bg-teal-700 active:scale-95 text-white shadow-teal-500/20' 
-                : 'bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed'
+                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-500 cursor-not-allowed'
             }`}
           >
             <span>{isAvailable ? 'Đăng ký mượn' : 'Tạm hết'}</span>

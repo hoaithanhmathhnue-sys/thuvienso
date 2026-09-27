@@ -134,7 +134,7 @@ export default function BorrowTicketsPage({
             <ClipboardList className="w-6 h-6 text-teal-600 dark:text-teal-400" />
             Danh Sách & Tra Cứu Phiếu Mượn Thiết Bị / Sách
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">
             Tra cứu tình trạng duyệt, hạn trả và in phiếu mượn giao nhận sách & đồ dùng học tập.
           </p>
         </div>
@@ -184,7 +184,7 @@ export default function BorrowTicketsPage({
                 className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                   isActive
                     ? 'bg-teal-600 text-white shadow-xs'
-                    : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-650'
+                    : 'bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-650'
                 }`}
               >
                 {s.label}
@@ -199,7 +199,7 @@ export default function BorrowTicketsPage({
       <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
-            <thead className="bg-slate-100 dark:bg-slate-750 text-slate-600 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-slate-700">
+            <thead className="bg-slate-100 dark:bg-slate-750 text-slate-800 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-slate-700">
               <tr>
                 <th className="py-3.5 px-4 w-36">Mã phiếu</th>
                 <th className="py-3.5 px-4">Người mượn & Đơn vị</th>
@@ -223,7 +223,7 @@ export default function BorrowTicketsPage({
                     >
                       {ticket.ticketCode}
                     </span>
-                    <span className="text-[10px] text-slate-400 block mt-0.5">
+                    <span className="text-[10px] text-slate-600 dark:text-slate-400 block mt-0.5">
                       {ticket.borrowDate}
                     </span>
                   </td>
@@ -233,7 +233,7 @@ export default function BorrowTicketsPage({
                     <div className="font-bold text-slate-900 dark:text-white">
                       {ticket.borrowerName}
                     </div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mt-0.5">
+                    <div className="text-[11px] text-slate-700 dark:text-slate-400 flex items-center gap-1.5 mt-0.5">
                       <span className="font-medium text-teal-600 dark:text-teal-400">{ticket.borrowerType}</span>
                       <span>•</span>
                       <span>{ticket.department}</span>
@@ -256,7 +256,7 @@ export default function BorrowTicketsPage({
                   </td>
 
                   {/* Ngày mượn */}
-                  <td className="py-3.5 px-3 text-slate-600 dark:text-slate-300 whitespace-nowrap">
+                  <td className="py-3.5 px-3 text-slate-800 dark:text-slate-300 whitespace-nowrap">
                     {ticket.borrowDate}
                   </td>
 
@@ -285,7 +285,7 @@ export default function BorrowTicketsPage({
                       <button
                         type="button"
                         onClick={() => onViewTicket(ticket)}
-                        className="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300"
+                        className="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-300"
                         title="Xem & In phiếu mượn"
                       >
                         <Eye className="w-4 h-4" />
@@ -393,7 +393,7 @@ export default function BorrowTicketsPage({
               <button
                 type="button"
                 onClick={() => setReturnModalTicket(null)}
-                className="py-2 px-4 rounded-xl border border-slate-200 dark:border-slate-600 text-xs font-semibold text-slate-600 dark:text-slate-300"
+                className="py-2 px-4 rounded-xl border border-slate-200 dark:border-slate-600 text-xs font-semibold text-slate-800 dark:text-slate-300"
               >
                 Đóng
               </button>

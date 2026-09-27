@@ -136,7 +136,7 @@ export default function AdminManagerPage({
             <ShieldCheck className="w-6 h-6 text-amber-500" />
             Cổng Quản Trị Kho Thiết Bị & Sách Thư Viện
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">
             Dành cho Thủ thư và Cán bộ phụ trách: Kiểm kê, thêm mới, sửa đổi và bảo toàn dữ liệu.
           </p>
         </div>
@@ -196,7 +196,7 @@ export default function AdminManagerPage({
       <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
-            <thead className="bg-slate-100 dark:bg-slate-750 text-slate-600 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-slate-700">
+            <thead className="bg-slate-100 dark:bg-slate-750 text-slate-800 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-slate-700">
               <tr>
                 <th className="py-3 px-4 w-24">Mã</th>
                 <th className="py-3 px-4">Tên tài nguyên</th>
@@ -224,9 +224,9 @@ export default function AdminManagerPage({
                     <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-700">
                       {res.group}
                     </span>
-                    <span className="text-[10px] text-slate-400 block mt-0.5 truncate">{res.category}</span>
+                    <span className="text-[10px] text-slate-600 dark:text-slate-400 block mt-0.5 truncate">{res.category}</span>
                   </td>
-                  <td className="py-3 px-4 text-slate-600 dark:text-slate-400">
+                  <td className="py-3 px-4 text-slate-700 dark:text-slate-400">
                     {res.location}
                   </td>
                   <td className="py-3 px-3 text-center font-bold">

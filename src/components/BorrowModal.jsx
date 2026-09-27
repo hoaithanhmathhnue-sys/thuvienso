@@ -161,7 +161,7 @@ export default function BorrowModal({
             <h4 className="font-bold text-sm text-slate-900 dark:text-white truncate">
               {resource.title}
             </h4>
-            <div className="text-xs text-slate-600 dark:text-slate-300 flex items-center gap-3 mt-0.5">
+            <div className="text-xs text-slate-800 dark:text-slate-300 flex items-center gap-3 mt-0.5">
               <span>Vị trí: <strong>{resource.location}</strong></span>
               <span>•</span>
               <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
@@ -182,7 +182,7 @@ export default function BorrowModal({
               <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                 Đăng ký mượn thành công!
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-sm text-slate-700 dark:text-slate-400">
                 Yêu cầu mượn của bạn đã được ghi nhận vào Thư Viện Số THPT Hoàng Diệu.
               </p>
             </div>
@@ -218,7 +218,7 @@ export default function BorrowModal({
               </div>
             </div>
 
-            <p className="text-xs text-slate-500 dark:text-slate-400 italic">
+            <p className="text-xs text-slate-700 dark:text-slate-400 italic">
               * Quý thầy cô/học sinh vui lòng đến phòng Thư viện & Thiết bị gặp Thủ thư để nhận tài nguyên và ký biên bản giao nhận.
             </p>
 

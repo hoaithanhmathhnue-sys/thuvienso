@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { 
   BookOpen, 
   Sparkles, 
@@ -141,7 +141,7 @@ export default function AboutPage({ setActiveTab }) {
               Tầng 1 • Khu vực tiếp nhận
             </span>
             <h4 className="font-bold text-sm text-slate-900 dark:text-white">Kho Thiết Bị & Đồ Dùng Dạy Học</h4>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-400 leading-relaxed">
               Giá E1, E2, E3 (Bản đồ, mô hình hình học, bảng từ) và Tủ D1, D2 (Loa kéo di động, micro UHF).
             </p>
             <div className="text-[11px] text-amber-700 dark:text-amber-300 font-semibold pt-1">
@@ -155,7 +155,7 @@ export default function AboutPage({ setActiveTab }) {
               Tầng 2 • Không gian đọc
             </span>
             <h4 className="font-bold text-sm text-slate-900 dark:text-white">Thư Viện & Phòng Đọc Mở</h4>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-400 leading-relaxed">
               Kệ sách Văn Sử A1, Khoa học B2, Toán học C1, Kỹ năng sống D3 và Tủ C2-C4 (Máy tính bảng, Wifi 5G).
             </p>
             <div className="text-[11px] text-teal-700 dark:text-teal-300 font-semibold pt-1">
@@ -169,7 +169,7 @@ export default function AboutPage({ setActiveTab }) {
               Tầng 3 • Thực hành sáng tạo
             </span>
             <h4 className="font-bold text-sm text-slate-900 dark:text-white">Phòng Thí Nghiệm & Phòng STEM</h4>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-400 leading-relaxed">
               Tủ F1, F2 (Bộ robot STEM cơ bản, bộ dụng cụ thí nghiệm khoa học tự nhiên, kính hiển vi, hóa chất mẫu).
             </p>
             <div className="text-[11px] text-emerald-700 dark:text-emerald-300 font-semibold pt-1">
@@ -186,7 +186,7 @@ export default function AboutPage({ setActiveTab }) {
           <ShieldCheck className="w-5 h-5 text-emerald-600" />
           Nội Quy Mượn & Bảo Quản Tài Nguyên
         </h2>
-        <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+        <ul className="space-y-2.5 text-xs sm:text-sm text-slate-800 dark:text-slate-300">
           <li className="flex items-start gap-2">
             <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
             <span><strong>Thời hạn mượn thông thường:</strong> Thiết bị dạy học mượn theo buổi hoặc tuần; Sách tham khảo tối đa 7-14 ngày. Nếu cần tiếp tục sử dụng vui lòng làm thủ tục gia hạn.</span>
@@ -212,7 +212,7 @@ export default function AboutPage({ setActiveTab }) {
             <p className="text-xs text-slate-500 dark:text-slate-400">
               Số 1 Mạc Đĩnh Chi, phường Phú Lợi, thành phố Cần Thơ
             </p>
-            <p className="text-xs text-slate-400 dark:text-slate-500 italic">
+            <p className="text-xs text-slate-600 dark:text-slate-500 italic">
               Người phát triển & quản trị hệ thống Thư Viện Số
             </p>
           </div>

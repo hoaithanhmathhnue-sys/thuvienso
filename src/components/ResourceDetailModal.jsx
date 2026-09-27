@@ -95,26 +95,26 @@ export default function ResourceDetailModal({
               {/* Attributes Grid */}
               <div className="grid grid-cols-2 gap-2 text-xs bg-slate-50 dark:bg-slate-750 p-3 rounded-xl border border-slate-200/80 dark:border-slate-700">
                 <div>
-                  <span className="text-slate-500 dark:text-slate-400 block text-[11px]">Vị trí lưu kho:</span>
+                  <span className="text-slate-700 dark:text-slate-400 block text-[11px]">Vị trí lưu kho:</span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1">
                     <MapPin className="w-3 h-3 text-teal-500 shrink-0" />
                     {resource.location}
                   </span>
                 </div>
                 <div>
-                  <span className="text-slate-500 dark:text-slate-400 block text-[11px]">Tác giả / Hãng SX:</span>
+                  <span className="text-slate-700 dark:text-slate-400 block text-[11px]">Tác giả / Hãng SX:</span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200 truncate block">
                     {resource.author || 'Đang cập nhật'}
                   </span>
                 </div>
                 <div>
-                  <span className="text-slate-500 dark:text-slate-400 block text-[11px]">Tổng số lượng:</span>
+                  <span className="text-slate-700 dark:text-slate-400 block text-[11px]">Tổng số lượng:</span>
                   <span className="font-semibold text-slate-800 dark:text-slate-200">
                     {resource.totalQty} {resource.unit}
                   </span>
                 </div>
                 <div>
-                  <span className="text-slate-500 dark:text-slate-400 block text-[11px]">Số lượt đã mượn:</span>
+                  <span className="text-slate-700 dark:text-slate-400 block text-[11px]">Số lượt đã mượn:</span>
                   <span className="font-bold text-teal-600 dark:text-teal-400">
                     {resource.borrowCount || 0} lượt
                   </span>
@@ -148,7 +148,7 @@ export default function ResourceDetailModal({
                 <QrCode className="w-4 h-4 text-teal-600 dark:text-teal-400" />
                 Mã QR tra cứu nhanh di động
               </div>
-              <p className="text-slate-600 dark:text-slate-300 text-[11px]">
+              <p className="text-slate-800 dark:text-slate-300 text-[11px]">
                 Giáo viên và học sinh có thể dùng Zalo hoặc ứng dụng máy ảnh điện thoại quét mã này để lưu thông tin và mang đến thủ thư đối chiếu nhanh.
               </p>
             </div>
@@ -175,7 +175,7 @@ export default function ResourceDetailModal({
             className={`py-2.5 px-6 rounded-xl text-xs font-bold flex items-center gap-2 shadow-md transition-all ${
               isAvailable 
                 ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-teal-500/20 active:scale-95' 
-                : 'bg-slate-200 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed'
+                : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-500 cursor-not-allowed'
             }`}
           >
             <span>{isAvailable ? 'Đăng ký mượn ngay' : 'Tạm hết trong kho'}</span>

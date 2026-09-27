@@ -57,7 +57,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
             <BarChart3 className="w-6 h-6 text-teal-600 dark:text-teal-400" />
             Báo Cáo & Thống Kê Hoạt Động Thư Viện
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">
             Tổng quan dữ liệu khai thác tài nguyên, lượt mượn trả và văn hóa đọc học đường.
           </p>
         </div>
@@ -183,7 +183,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
                       <span className={`w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] ${
                         index === 0 ? 'bg-amber-400 text-slate-900' :
                         index === 1 ? 'bg-slate-300 text-slate-800' :
-                        index === 2 ? 'bg-amber-600 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'
+                        index === 2 ? 'bg-amber-600 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-400'
                       }`}>
                         {index + 1}
                       </span>
@@ -225,7 +225,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
             <div className="space-y-3 text-xs">
               <div>
                 <div className="flex justify-between mb-1">
-                  <span className="text-slate-600 dark:text-slate-300">Thiết bị dạy học:</span>
+                  <span className="text-slate-800 dark:text-slate-300">Thiết bị dạy học:</span>
                   <strong>{groupStats['Thiết bị']} đầu mục</strong>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
@@ -235,7 +235,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
 
               <div>
                 <div className="flex justify-between mb-1">
-                  <span className="text-slate-600 dark:text-slate-300">Sách thư viện:</span>
+                  <span className="text-slate-800 dark:text-slate-300">Sách thư viện:</span>
                   <strong>{groupStats['Sách thư viện']} đầu mục</strong>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
@@ -245,7 +245,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
 
               <div>
                 <div className="flex justify-between mb-1">
-                  <span className="text-slate-600 dark:text-slate-300">Tài liệu tham khảo:</span>
+                  <span className="text-slate-800 dark:text-slate-300">Tài liệu tham khảo:</span>
                   <strong>{groupStats['Tài liệu tham khảo']} đầu mục</strong>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
@@ -266,12 +266,12 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
               <div className="p-3 rounded-2xl bg-teal-50 dark:bg-slate-750 border border-blue-100 dark:border-slate-700">
                 <span className="text-slate-500 text-[11px] block">Giáo viên</span>
                 <strong className="text-lg text-teal-600 font-extrabold">{teacherBorrows}</strong>
-                <span className="text-[10px] text-slate-400 block">lượt mượn</span>
+                <span className="text-[10px] text-slate-600 dark:text-slate-400 block">lượt mượn</span>
               </div>
               <div className="p-3 rounded-2xl bg-indigo-50 dark:bg-slate-750 border border-indigo-100 dark:border-slate-700">
                 <span className="text-slate-500 text-[11px] block">Học sinh</span>
                 <strong className="text-lg text-indigo-600 font-extrabold">{studentBorrows}</strong>
-                <span className="text-[10px] text-slate-400 block">lượt mượn</span>
+                <span className="text-[10px] text-slate-600 dark:text-slate-400 block">lượt mượn</span>
               </div>
             </div>
           </div>
@@ -299,7 +299,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
                   <span className="text-slate-500 font-normal">Hạn: {t.dueDate}</span>
                 </div>
                 <div className="font-semibold text-slate-800 dark:text-slate-200">{t.borrowerName} ({t.department})</div>
-                <div className="text-[11px] text-slate-600 dark:text-slate-400 truncate">{t.resourceTitle}</div>
+                <div className="text-[11px] text-slate-700 dark:text-slate-400 truncate">{t.resourceTitle}</div>
                 <div className="pt-1 flex justify-between items-center text-[11px]">
                   <span className="text-slate-500">SĐT: {t.phone}</span>
                   <button

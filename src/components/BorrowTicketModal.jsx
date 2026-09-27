@@ -61,13 +61,13 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
           {/* School Header */}
           <div className="flex justify-between items-start border-b-2 border-slate-900 pb-4 text-center sm:text-left print:border-black">
             <div>
-              <p className="text-xs uppercase font-semibold tracking-wider text-slate-600 dark:text-slate-400 print:text-black">
+              <p className="text-xs uppercase font-semibold tracking-wider text-slate-700 dark:text-slate-400 print:text-black">
                 SỞ GDĐT TP. CẦN THƠ • TRƯỜNG THPT HOÀNG DIỆU
               </p>
               <h2 className="text-base font-extrabold uppercase text-slate-900 dark:text-white print:text-black">
                 HỆ THỐNG THƯ VIỆN & THIẾT BỊ DẠY HỌC
               </h2>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 print:text-black">
+              <p className="text-[11px] text-slate-700 dark:text-slate-400 print:text-black">
                 Hotline hỗ trợ: 0292 3 832 456 • Email: thuvien@thpthoangdieu.edu.vn
               </p>
             </div>
@@ -102,40 +102,40 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs bg-slate-50 dark:bg-slate-750 print:bg-transparent p-4 rounded-2xl border border-slate-200 dark:border-slate-700 print:border-black">
             <div className="space-y-2">
               <p>
-                <span className="text-slate-500 dark:text-slate-400 print:text-black">Người mượn: </span>
+                <span className="text-slate-700 dark:text-slate-400 print:text-black">Người mượn: </span>
                 <strong className="text-slate-900 dark:text-white print:text-black">{ticket.borrowerName}</strong>
               </p>
               <p>
-                <span className="text-slate-500 dark:text-slate-400 print:text-black">Đối tượng: </span>
+                <span className="text-slate-700 dark:text-slate-400 print:text-black">Đối tượng: </span>
                 <span className="font-semibold text-slate-800 dark:text-slate-200 print:text-black">{ticket.borrowerType}</span>
               </p>
               <p>
-                <span className="text-slate-500 dark:text-slate-400 print:text-black">Lớp / Tổ chuyên môn: </span>
+                <span className="text-slate-700 dark:text-slate-400 print:text-black">Lớp / Tổ chuyên môn: </span>
                 <span className="font-semibold text-slate-800 dark:text-slate-200 print:text-black">{ticket.department}</span>
               </p>
               <p>
-                <span className="text-slate-500 dark:text-slate-400 print:text-black">Số điện thoại: </span>
+                <span className="text-slate-700 dark:text-slate-400 print:text-black">Số điện thoại: </span>
                 <span className="font-semibold text-slate-800 dark:text-slate-200 print:text-black">{ticket.phone}</span>
               </p>
             </div>
 
             <div className="space-y-2">
               <p>
-                <span className="text-slate-500 dark:text-slate-400 print:text-black">Ngày mượn: </span>
+                <span className="text-slate-700 dark:text-slate-400 print:text-black">Ngày mượn: </span>
                 <strong className="text-slate-900 dark:text-white print:text-black">{ticket.borrowDate}</strong>
               </p>
               <p>
-                <span className="text-slate-500 dark:text-slate-400 print:text-black">Hạn trả quy định: </span>
+                <span className="text-slate-700 dark:text-slate-400 print:text-black">Hạn trả quy định: </span>
                 <strong className="text-amber-600 dark:text-amber-400 print:text-black">{ticket.dueDate}</strong>
               </p>
               {ticket.returnDate && (
                 <p>
-                  <span className="text-slate-500 dark:text-slate-400 print:text-black">Ngày thực trả: </span>
+                  <span className="text-slate-700 dark:text-slate-400 print:text-black">Ngày thực trả: </span>
                   <strong className="text-emerald-600 dark:text-emerald-400 print:text-black">{ticket.returnDate}</strong>
                 </p>
               )}
               <p>
-                <span className="text-slate-500 dark:text-slate-400 print:text-black">Mục đích: </span>
+                <span className="text-slate-700 dark:text-slate-400 print:text-black">Mục đích: </span>
                 <span className="italic text-slate-700 dark:text-slate-300 print:text-black">{ticket.purpose}</span>
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
             {ticket.note && (
               <p>
                 <span className="font-semibold text-slate-700 dark:text-slate-300 print:text-black">Ghi chú lưu ý: </span>
-                <span className="italic text-slate-600 dark:text-slate-400 print:text-black">{ticket.note}</span>
+                <span className="italic text-slate-700 dark:text-slate-400 print:text-black">{ticket.note}</span>
               </p>
             )}
           </div>
@@ -187,7 +187,7 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
               <p className="font-bold text-slate-900 dark:text-white print:text-black uppercase">
                 NGƯỜI MƯỢN
               </p>
-              <p className="italic text-slate-500 dark:text-slate-400 print:text-black">
+              <p className="italic text-slate-700 dark:text-slate-400 print:text-black">
                 {ticket.borrowerName}
               </p>
             </div>
@@ -196,7 +196,7 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
               <p className="font-bold text-slate-900 dark:text-white print:text-black uppercase">
                 CÁN BỘ PHỤ TRÁCH THƯ VIỆN
               </p>
-              <p className="italic text-slate-500 dark:text-slate-400 print:text-black">
+              <p className="italic text-slate-700 dark:text-slate-400 print:text-black">
                 (Ký và ghi rõ họ tên)
               </p>
             </div>
