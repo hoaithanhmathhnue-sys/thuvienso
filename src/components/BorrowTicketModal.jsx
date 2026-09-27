@@ -11,7 +11,7 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
   const getStatusBadge = (status) => {
     switch (status) {
       case 'Đã duyệt':
-        return <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300">Đã duyệt (Đang mượn)</span>;
+        return <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-teal-100 text-blue-800 dark:bg-teal-950 dark:text-teal-300">Đã duyệt (Đang mượn)</span>;
       case 'Chờ duyệt':
         return <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Chờ duyệt</span>;
       case 'Đã trả':
@@ -33,14 +33,14 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
         {/* Header Action Bar (no-print) */}
         <div className="no-print bg-slate-100 dark:bg-slate-750 px-6 py-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <FileText className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+            <FileText className="w-5 h-5 text-teal-600 dark:text-teal-400" />
             <span className="font-bold text-sm text-slate-800 dark:text-white">Chi tiết Phiếu Mượn</span>
           </div>
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={handlePrint}
-              className="py-1.5 px-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-colors"
+              className="py-1.5 px-3.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-colors"
             >
               <Printer className="w-4 h-4" />
               In Phiếu (A4/A5)
@@ -90,7 +90,7 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
             <h1 className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white print:text-black uppercase">
               PHIẾU MƯỢN THIẾT BỊ & TÀI NGUYÊN THƯ VIỆN
             </h1>
-            <p className="font-mono text-sm font-bold text-blue-600 dark:text-blue-400 print:text-black">
+            <p className="font-mono text-sm font-bold text-teal-600 dark:text-teal-400 print:text-black">
               Mã số: {ticket.ticketCode}
             </p>
             <div className="no-print pt-1 flex justify-center">
@@ -159,7 +159,7 @@ export default function BorrowTicketModal({ ticket, isOpen, onClose }) {
                   <td className="border border-slate-300 dark:border-slate-600 print:border-black p-2 text-center">1</td>
                   <td className="border border-slate-300 dark:border-slate-600 print:border-black p-2 font-mono font-bold">{ticket.resourceId}</td>
                   <td className="border border-slate-300 dark:border-slate-600 print:border-black p-2 font-bold">{ticket.resourceTitle}</td>
-                  <td className="border border-slate-300 dark:border-slate-600 print:border-black p-2 text-center font-bold text-blue-600 print:text-black">{ticket.quantity}</td>
+                  <td className="border border-slate-300 dark:border-slate-600 print:border-black p-2 text-center font-bold text-teal-600 print:text-black">{ticket.quantity}</td>
                   <td className="border border-slate-300 dark:border-slate-600 print:border-black p-2 text-center">{ticket.resourceUnit}</td>
                   <td className="border border-slate-300 dark:border-slate-600 print:border-black p-2">{ticket.conditionOnBorrow || 'Hoạt động tốt'}</td>
                 </tr>

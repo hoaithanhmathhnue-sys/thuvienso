@@ -22,8 +22,8 @@ export default function AboutPage({ setActiveTab }) {
       
       {/* Hero Header */}
       <div className="text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-xs font-semibold border border-blue-200 dark:border-blue-800">
-          <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 text-xs font-semibold border border-teal-200 dark:border-teal-800">
+          <Sparkles className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
           Giới thiệu Hệ Thống Quản Lý Thư Viện Trường Học
         </div>
 
@@ -31,7 +31,7 @@ export default function AboutPage({ setActiveTab }) {
           HỆ THỐNG QUẢN LÝ THƯ VIỆN TRƯỜNG HỌC
         </h1>
 
-        <p className="text-base sm:text-lg text-blue-600 dark:text-blue-400 font-semibold max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-teal-600 dark:text-teal-400 font-semibold max-w-2xl mx-auto">
           &ldquo;Kết nối sách với bạn đọc, đưa thư viện đến gần hơn với học sinh&rdquo;
         </p>
 
@@ -74,7 +74,7 @@ export default function AboutPage({ setActiveTab }) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs space-y-2">
-            <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold">
+            <div className="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-950 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold">
               <BookOpen className="w-5 h-5" />
             </div>
             <h3 className="font-bold text-sm text-slate-900 dark:text-white">Cổng Tra Cứu OPAC</h3>
@@ -120,14 +120,14 @@ export default function AboutPage({ setActiveTab }) {
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div>
             <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <MapPin className="w-5 h-5 text-teal-600 dark:text-teal-400" />
               Sơ Đồ Bố Trí Thư Viện & Các Phòng Chức Năng
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400">
               Vị trí các khu vực mượn trả và lưu trữ thiết bị trong khuôn viên nhà trường
             </p>
           </div>
-          <span className="text-xs px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-800">
+          <span className="text-xs px-2.5 py-1 rounded-full bg-teal-50 dark:bg-teal-950 text-teal-600 dark:text-teal-400 font-semibold border border-teal-200 dark:border-teal-800">
             Tòa nhà Tri Thức
           </span>
         </div>
@@ -150,15 +150,15 @@ export default function AboutPage({ setActiveTab }) {
           </div>
 
           {/* Tầng 2: Phòng Thư viện chính & Đọc sách */}
-          <div className="p-4 rounded-2xl bg-blue-50/60 dark:bg-slate-750 border border-blue-200/80 dark:border-slate-700 space-y-2">
-            <span className="font-bold text-blue-800 dark:text-blue-400 uppercase text-[10px] tracking-wider">
+          <div className="p-4 rounded-2xl bg-teal-50/60 dark:bg-slate-750 border border-teal-200/80 dark:border-slate-700 space-y-2">
+            <span className="font-bold text-blue-800 dark:text-teal-400 uppercase text-[10px] tracking-wider">
               Tầng 2 • Không gian đọc
             </span>
             <h4 className="font-bold text-sm text-slate-900 dark:text-white">Thư Viện & Phòng Đọc Mở</h4>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
               Kệ sách Văn Sử A1, Khoa học B2, Toán học C1, Kỹ năng sống D3 và Tủ C2-C4 (Máy tính bảng, Wifi 5G).
             </p>
-            <div className="text-[11px] text-blue-700 dark:text-blue-300 font-semibold pt-1">
+            <div className="text-[11px] text-teal-700 dark:text-teal-300 font-semibold pt-1">
               Phụ trách: Cán bộ Thư viện chính
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function AboutPage({ setActiveTab }) {
         <button
           type="button"
           onClick={() => setActiveTab('catalog')}
-          className="px-8 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-lg shadow-blue-500/25 active:scale-95 transition-all inline-flex items-center gap-2"
+          className="px-8 py-3.5 rounded-2xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm shadow-lg shadow-teal-500/25 active:scale-95 transition-all inline-flex items-center gap-2"
         >
           <BookOpen className="w-4 h-4" />
           Bắt đầu tra cứu và đăng ký mượn ngay

@@ -6,10 +6,7 @@ import {
   Mail, 
   Globe, 
   QrCode, 
-  ExternalLink, 
-  ShieldCheck, 
   ChevronRight,
-  Heart
 } from 'lucide-react';
 
 export default function Footer({ setActiveTab }) {
@@ -23,12 +20,12 @@ export default function Footer({ setActiveTab }) {
           {/* Column 1: Brand & Slogan */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-teal-500/30">
                 <BookOpen className="w-5 h-5" />
               </div>
               <div>
                 <h3 className="text-white font-bold text-base tracking-tight">Hệ thống Quản lý Thư viện</h3>
-                <p className="text-xs text-blue-400 font-medium">PDT Studio Education</p>
+                <p className="text-xs text-teal-400 font-medium">PDT Studio Education</p>
               </div>
             </div>
 
@@ -47,7 +44,7 @@ export default function Footer({ setActiveTab }) {
           {/* Column 2: Liên hệ nhà trường */}
           <div className="space-y-3">
             <h4 className="text-white font-semibold text-sm uppercase tracking-wider flex items-center gap-2 border-b border-slate-800 pb-2">
-              <Phone className="w-4 h-4 text-blue-400" />
+              <Phone className="w-4 h-4 text-teal-400" />
               Thông tin liên hệ
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">
@@ -57,15 +54,15 @@ export default function Footer({ setActiveTab }) {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-slate-500 shrink-0" />
-                <span>Hotline: <strong className="text-yellow-400 font-bold">0236 3 888 999</strong></span>
+                <span>Hotline: <strong className="text-amber-400 font-bold">0236 3 888 999</strong></span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-slate-500 shrink-0" />
-                <span>Email: <a href="mailto:webmaster@thcs.pdtstudio.store" className="hover:text-blue-400 transition-colors">webmaster@thcs.pdtstudio.store</a></span>
+                <span>Email: <a href="mailto:webmaster@thcs.pdtstudio.store" className="hover:text-teal-400 transition-colors">webmaster@thcs.pdtstudio.store</a></span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Globe className="w-4 h-4 text-slate-500 shrink-0" />
-                <span>Cổng thông tin: <a href="https://quanlythuvien.pdtstudio.store" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">quanlythuvien.pdtstudio.store</a></span>
+                <span>Cổng thông tin: <a href="https://quanlythuvien.pdtstudio.store" target="_blank" rel="noreferrer" className="text-teal-400 hover:underline">quanlythuvien.pdtstudio.store</a></span>
               </li>
             </ul>
           </div>
@@ -73,7 +70,7 @@ export default function Footer({ setActiveTab }) {
           {/* Column 3: Liên kết nhanh */}
           <div className="space-y-3">
             <h4 className="text-white font-semibold text-sm uppercase tracking-wider flex items-center gap-2 border-b border-slate-800 pb-2">
-              <ChevronRight className="w-4 h-4 text-blue-400" />
+              <ChevronRight className="w-4 h-4 text-teal-400" />
               Liên kết nhanh
             </h4>
             <ul className="space-y-2 text-xs">
@@ -81,36 +78,36 @@ export default function Footer({ setActiveTab }) {
                 <button 
                   type="button" 
                   onClick={() => setActiveTab('catalog')} 
-                  className="hover:text-blue-400 transition-colors flex items-center gap-1.5"
+                  className="hover:text-teal-400 transition-colors flex items-center gap-1.5"
                 >
-                  <span className="text-blue-500">›</span> Tra cứu kho sách & thiết bị
+                  <span className="text-teal-500">›</span> Tra cứu kho sách & thiết bị
                 </button>
               </li>
               <li>
                 <button 
                   type="button" 
                   onClick={() => setActiveTab('tickets')} 
-                  className="hover:text-blue-400 transition-colors flex items-center gap-1.5"
+                  className="hover:text-teal-400 transition-colors flex items-center gap-1.5"
                 >
-                  <span className="text-blue-500">›</span> Tra cứu phiếu mượn - trả
+                  <span className="text-teal-500">›</span> Tra cứu phiếu mượn - trả
                 </button>
               </li>
               <li>
                 <button 
                   type="button" 
                   onClick={() => setActiveTab('dashboard')} 
-                  className="hover:text-blue-400 transition-colors flex items-center gap-1.5"
+                  className="hover:text-teal-400 transition-colors flex items-center gap-1.5"
                 >
-                  <span className="text-blue-500">›</span> Báo cáo thống kê trực quan
+                  <span className="text-teal-500">›</span> Báo cáo thống kê trực quan
                 </button>
               </li>
               <li>
                 <button 
                   type="button" 
                   onClick={() => setActiveTab('about')} 
-                  className="hover:text-blue-400 transition-colors flex items-center gap-1.5"
+                  className="hover:text-teal-400 transition-colors flex items-center gap-1.5"
                 >
-                  <span className="text-blue-500">›</span> Giới thiệu hệ thống & Quy định
+                  <span className="text-teal-500">›</span> Giới thiệu hệ thống & Quy định
                 </button>
               </li>
             </ul>
@@ -119,7 +116,7 @@ export default function Footer({ setActiveTab }) {
           {/* Column 4: Mã QR & Tiện ích */}
           <div className="space-y-3">
             <h4 className="text-white font-semibold text-sm uppercase tracking-wider flex items-center gap-2 border-b border-slate-800 pb-2">
-              <QrCode className="w-4 h-4 text-blue-400" />
+              <QrCode className="w-4 h-4 text-teal-400" />
               Truy cập nhanh di động
             </h4>
             <div className="bg-slate-800 p-3 rounded-xl border border-slate-700 flex items-center gap-3">
@@ -141,10 +138,10 @@ export default function Footer({ setActiveTab }) {
 
         </div>
 
-        {/* Bottom Bar: Copyright & Terms */}
+        {/* Bottom Bar */}
         <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} Bản quyền thuộc về <strong className="text-slate-300">Hệ thống quản lý thư viện</strong>. Thiết kế & phát triển chuẩn công nghệ số bởi <a href="https://thcs.pdtstudio.store/" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">PDTSTUDIO</a>.
+            © {new Date().getFullYear()} Bản quyền thuộc về <strong className="text-slate-300">Hệ thống quản lý thư viện</strong>. Thiết kế & phát triển chuẩn công nghệ số bởi <a href="https://thcs.pdtstudio.store/" target="_blank" rel="noreferrer" className="text-teal-400 hover:underline">PDTSTUDIO</a>.
           </div>
           <div className="flex items-center gap-4">
             <button type="button" onClick={() => setActiveTab('about')} className="hover:text-slate-300 transition-colors">
@@ -158,7 +155,7 @@ export default function Footer({ setActiveTab }) {
             <button 
               type="button" 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
-              className="text-blue-400 hover:text-blue-300 flex items-center gap-1 font-medium"
+              className="text-teal-400 hover:text-teal-300 flex items-center gap-1 font-medium"
             >
               Lên đầu trang ↑
             </button>

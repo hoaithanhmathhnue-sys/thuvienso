@@ -54,7 +54,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5">
-            <BarChart3 className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            <BarChart3 className="w-6 h-6 text-teal-600 dark:text-teal-400" />
             Báo Cáo & Thống Kê Hoạt Động Thư Viện
           </h1>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -68,7 +68,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
             onClick={handlePrintDashboard}
             className="py-2 px-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5 shadow-xs transition-colors"
           >
-            <Printer className="w-4 h-4 text-blue-600" />
+            <Printer className="w-4 h-4 text-teal-600" />
             In Báo Cáo
           </button>
         </div>
@@ -81,7 +81,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
         <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200/80 dark:border-slate-700 shadow-xs space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">Danh mục tài nguyên</span>
-            <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400">
+            <div className="p-2 rounded-xl bg-teal-50 dark:bg-teal-950 text-teal-600 dark:text-teal-400">
               <Layers className="w-4 h-4" />
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
         <div className="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-xs space-y-5">
           <div className="flex items-center justify-between">
             <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <TrendingUp className="w-5 h-5 text-teal-600 dark:text-teal-400" />
               Top Sách & Thiết Bị Được Khai Thác Nhiều Nhất
             </h3>
             <span className="text-xs text-slate-400 font-medium">Học kỳ hiện tại</span>
@@ -187,14 +187,14 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
                       }`}>
                         {index + 1}
                       </span>
-                      <span className="font-semibold text-slate-800 dark:text-slate-200 hover:text-blue-600 cursor-pointer">
+                      <span className="font-semibold text-slate-800 dark:text-slate-200 hover:text-teal-600 cursor-pointer">
                         {item.title}
                       </span>
                       <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-100 dark:bg-slate-700 text-slate-500">
                         {item.category}
                       </span>
                     </div>
-                    <span className="font-bold text-blue-600 dark:text-blue-400">
+                    <span className="font-bold text-teal-600 dark:text-teal-400">
                       {item.borrowCount} lượt
                     </span>
                   </div>
@@ -202,7 +202,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
                   {/* Progress bar */}
                   <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2 overflow-hidden">
                     <div
-                      className="bg-gradient-to-r from-blue-600 to-indigo-600 h-full rounded-full transition-all duration-500"
+                      className="bg-gradient-to-r from-teal-600 to-cyan-600 h-full rounded-full transition-all duration-500"
                       style={{ width: `${percent}%` }}
                     />
                   </div>
@@ -218,7 +218,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
           {/* Card: Cơ cấu tài nguyên theo nhóm */}
           <div className="bg-white dark:bg-slate-800 p-5 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-xs space-y-4">
             <h3 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-              <Layers className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+              <Layers className="w-4 h-4 text-teal-600 dark:text-teal-400" />
               Cơ cấu tài nguyên theo nhóm
             </h3>
 
@@ -239,7 +239,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
                   <strong>{groupStats['Sách thư viện']} đầu mục</strong>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
-                  <div className="bg-blue-600 h-full rounded-full" style={{ width: `${(groupStats['Sách thư viện'] / totalResourceTypes) * 100}%` }} />
+                  <div className="bg-teal-600 h-full rounded-full" style={{ width: `${(groupStats['Sách thư viện'] / totalResourceTypes) * 100}%` }} />
                 </div>
               </div>
 
@@ -263,9 +263,9 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
             </h3>
 
             <div className="grid grid-cols-2 gap-3 text-center text-xs">
-              <div className="p-3 rounded-2xl bg-blue-50 dark:bg-slate-750 border border-blue-100 dark:border-slate-700">
+              <div className="p-3 rounded-2xl bg-teal-50 dark:bg-slate-750 border border-blue-100 dark:border-slate-700">
                 <span className="text-slate-500 text-[11px] block">Giáo viên</span>
-                <strong className="text-lg text-blue-600 font-extrabold">{teacherBorrows}</strong>
+                <strong className="text-lg text-teal-600 font-extrabold">{teacherBorrows}</strong>
                 <span className="text-[10px] text-slate-400 block">lượt mượn</span>
               </div>
               <div className="p-3 rounded-2xl bg-indigo-50 dark:bg-slate-750 border border-indigo-100 dark:border-slate-700">
@@ -305,7 +305,7 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
                   <button
                     type="button"
                     onClick={() => onViewTicket(t)}
-                    className="text-blue-600 hover:underline font-semibold"
+                    className="text-teal-600 hover:underline font-semibold"
                   >
                     Xem phiếu ›
                   </button>

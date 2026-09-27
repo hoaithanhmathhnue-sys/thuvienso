@@ -18,7 +18,7 @@ export default function Toast({ toast, onClose }) {
       case 'error':
         return <AlertCircle className="w-5 h-5 text-rose-500" />;
       default:
-        return <Info className="w-5 h-5 text-blue-500" />;
+        return <Info className="w-5 h-5 text-teal-500" />;
     }
   };
 
@@ -29,7 +29,7 @@ export default function Toast({ toast, onClose }) {
       case 'error':
         return 'border-rose-500';
       default:
-        return 'border-blue-500';
+        return 'border-teal-500';
     }
   };
 

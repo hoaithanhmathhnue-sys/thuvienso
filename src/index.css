@@ -2,38 +2,79 @@
 
 @layer base {
   :root {
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
+    /* 🎨 Teal Color System — Tươi sáng, hiện đại */
+    --primary: #0D9488;
+    --primary-hover: #0F766E;
+    --primary-light: #CCFBF1;
+    --primary-dark: #115E59;
+    --accent: #F97316;
+    --accent-light: #FFF7ED;
+    --gradient-start: #0D9488;
+    --gradient-end: #06B6D4;
   }
 }
 
 body {
   margin: 0;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Be Vietnam Pro', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbars */
+/* Custom scrollbars — Teal accent */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f0fdfa;
 }
 .dark ::-webkit-scrollbar-track {
   background: #1e293b;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #99f6e4;
   border-radius: 4px;
 }
 .dark ::-webkit-scrollbar-thumb {
   background: #475569;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #5eead4;
+}
+
+/* Selection color */
+::selection {
+  background-color: #0D9488;
+  color: white;
+}
+
+/* Page transition animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Skeleton loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0fdfa 25%, #ccfbf1 50%, #f0fdfa 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
 }
 
 @media print {

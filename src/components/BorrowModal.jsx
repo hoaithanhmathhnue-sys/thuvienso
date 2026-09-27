@@ -121,7 +121,7 @@ export default function BorrowModal({
       >
         
         {/* Modal Header */}
-        <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 p-5 text-white flex justify-between items-start">
+        <div className="bg-gradient-to-r from-teal-600 via-indigo-600 to-blue-700 p-5 text-white flex justify-between items-start">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white font-bold shrink-0">
               <BookOpen className="w-5 h-5" />
@@ -143,7 +143,7 @@ export default function BorrowModal({
         </div>
 
         {/* Selected Item Preview Strip */}
-        <div className="bg-blue-50 dark:bg-slate-750 px-5 py-3 border-b border-blue-100 dark:border-slate-700 flex items-center gap-4">
+        <div className="bg-teal-50 dark:bg-slate-750 px-5 py-3 border-b border-blue-100 dark:border-slate-700 flex items-center gap-4">
           <img
             src={resource.image}
             alt={resource.title}
@@ -151,7 +151,7 @@ export default function BorrowModal({
           />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
-              <span className="font-mono text-xs font-bold px-1.5 py-0.5 rounded bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
+              <span className="font-mono text-xs font-bold px-1.5 py-0.5 rounded bg-blue-200 dark:bg-teal-900 text-blue-800 dark:text-blue-200">
                 {resource.code}
               </span>
               <span className="text-xs text-slate-500 dark:text-slate-400">
@@ -190,7 +190,7 @@ export default function BorrowModal({
             <div className="bg-slate-50 dark:bg-slate-700/60 rounded-2xl p-4 border border-slate-200 dark:border-slate-600 text-left space-y-2 text-xs">
               <div className="flex justify-between items-center pb-2 border-b border-slate-200 dark:border-slate-600">
                 <span className="text-slate-500 dark:text-slate-400">Mã phiếu mượn:</span>
-                <span className="font-mono text-sm font-bold text-blue-600 dark:text-blue-400">
+                <span className="font-mono text-sm font-bold text-teal-600 dark:text-teal-400">
                   {createdTicket.ticketCode}
                 </span>
               </div>
@@ -226,7 +226,7 @@ export default function BorrowModal({
               <button
                 type="button"
                 onClick={() => onViewTicket(createdTicket)}
-                className="flex-1 py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-colors"
+                className="flex-1 py-2.5 px-4 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-colors"
               >
                 <Printer className="w-4 h-4" />
                 Xem & In Phiếu Mượn
@@ -260,7 +260,7 @@ export default function BorrowModal({
                   name="borrowerType"
                   value={formData.borrowerType}
                   onChange={handleChange}
-                  className="w-full text-xs py-2 px-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="w-full text-xs py-2 px-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none"
                 >
                   <option value="Giáo viên">Giáo viên</option>
                   <option value="Học sinh">Học sinh</option>
@@ -280,7 +280,7 @@ export default function BorrowModal({
                     value={formData.borrowerName}
                     onChange={handleChange}
                     placeholder="Ví dụ: Thầy Phạm Đức Trung / Em Nguyễn Hoàng Mai"
-                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none"
                     required
                   />
                 </div>
@@ -301,7 +301,7 @@ export default function BorrowModal({
                     value={formData.department}
                     onChange={handleChange}
                     placeholder="VD: Lớp 7/1 hoặc Tổ Toán"
-                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none"
                     required
                   />
                 </div>
@@ -319,7 +319,7 @@ export default function BorrowModal({
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="09xx xxx xxx"
-                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none"
                     required
                   />
                 </div>
@@ -337,7 +337,7 @@ export default function BorrowModal({
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="email@thcs.pdtstudio.store"
-                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -356,7 +356,7 @@ export default function BorrowModal({
                   max={resource.availableQty}
                   value={formData.quantity}
                   onChange={handleChange}
-                  className="w-full text-xs py-2 px-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="w-full text-xs py-2 px-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-bold focus:ring-2 focus:ring-teal-500 focus:outline-none"
                   required
                 />
                 <span className="text-[10px] text-slate-500">Tối đa: {resource.availableQty}</span>
@@ -373,7 +373,7 @@ export default function BorrowModal({
                     name="borrowDate"
                     value={formData.borrowDate}
                     onChange={handleChange}
-                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none"
                     required
                   />
                 </div>
@@ -391,7 +391,7 @@ export default function BorrowModal({
                     value={formData.dueDate}
                     min={formData.borrowDate}
                     onChange={handleChange}
-                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-bold text-blue-600 dark:text-blue-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full text-xs py-2 pl-9 pr-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-bold text-teal-600 dark:text-teal-400 focus:ring-2 focus:ring-teal-500 focus:outline-none"
                     required
                   />
                 </div>
@@ -410,7 +410,7 @@ export default function BorrowModal({
                   value={formData.purpose}
                   onChange={handleChange}
                   placeholder="VD: Tiết 3 học thực hành KHTN bài 5"
-                  className="w-full text-xs py-2 px-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="w-full text-xs py-2 px-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none"
                 />
               </div>
 
@@ -423,7 +423,7 @@ export default function BorrowModal({
                   name="conditionOnBorrow"
                   value={formData.conditionOnBorrow}
                   onChange={handleChange}
-                  className="w-full text-xs py-2 px-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="w-full text-xs py-2 px-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none"
                 />
               </div>
             </div>
@@ -439,7 +439,7 @@ export default function BorrowModal({
                 value={formData.note}
                 onChange={handleChange}
                 placeholder="Nhập yêu cầu phụ kiện đi kèm hoặc lưu ý đặc biệt..."
-                className="w-full text-xs p-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
+                className="w-full text-xs p-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:outline-none resize-none"
               />
             </div>
 
@@ -454,7 +454,7 @@ export default function BorrowModal({
               </button>
               <button
                 type="submit"
-                className="py-2.5 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-bold shadow-md shadow-blue-500/20 active:scale-95 transition-all"
+                className="py-2.5 px-6 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white text-xs font-bold shadow-md shadow-teal-500/20 active:scale-95 transition-all"
               >
                 Xác nhận Đăng ký mượn
               </button>

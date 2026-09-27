@@ -145,7 +145,7 @@ export default function AdminManagerPage({
           <button
             type="button"
             onClick={handleOpenAdd}
-            className="py-2 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-xs font-bold flex items-center gap-1.5 shadow-md shadow-blue-500/20 transition-all"
+            className="py-2 px-4 rounded-xl bg-teal-600 hover:bg-teal-700 active:scale-95 text-white text-xs font-bold flex items-center gap-1.5 shadow-md shadow-teal-500/20 transition-all"
           >
             <Plus className="w-4 h-4" />
             Thêm sách / Thiết bị mới
@@ -184,11 +184,11 @@ export default function AdminManagerPage({
             value={adminSearch}
             onChange={(e) => setAdminSearch(e.target.value)}
             placeholder="Tìm kiếm nhanh mã tài nguyên, tên, vị trí kho..."
-            className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-750 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-750 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
           />
         </div>
         <div className="text-xs text-slate-500 whitespace-nowrap">
-          Tổng số: <strong className="text-blue-600 dark:text-blue-400">{filtered.length}</strong> đầu mục
+          Tổng số: <strong className="text-teal-600 dark:text-teal-400">{filtered.length}</strong> đầu mục
         </div>
       </div>
 
@@ -211,7 +211,7 @@ export default function AdminManagerPage({
             <tbody className="divide-y divide-slate-100 dark:divide-slate-700 text-slate-700 dark:text-slate-200">
               {filtered.map(res => (
                 <tr key={res.id} className="hover:bg-slate-50 dark:hover:bg-slate-750/50 transition-colors">
-                  <td className="py-3 px-4 font-mono font-bold text-blue-600 dark:text-blue-400">
+                  <td className="py-3 px-4 font-mono font-bold text-teal-600 dark:text-teal-400">
                     {res.code}
                   </td>
                   <td className="py-3 px-4 font-semibold text-slate-900 dark:text-white">
@@ -235,7 +235,7 @@ export default function AdminManagerPage({
                   <td className="py-3 px-3 text-center font-bold text-emerald-600 dark:text-emerald-400">
                     {res.availableQty} {res.unit}
                   </td>
-                  <td className="py-3 px-3 text-center text-blue-600 font-semibold">
+                  <td className="py-3 px-3 text-center text-teal-600 font-semibold">
                     {res.borrowCount || 0}
                   </td>
                   <td className="py-3 px-4 text-right">
@@ -243,7 +243,7 @@ export default function AdminManagerPage({
                       <button
                         type="button"
                         onClick={() => handleOpenEdit(res)}
-                        className="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-blue-600"
+                        className="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-teal-600"
                         title="Chỉnh sửa thông tin"
                       >
                         <Edit3 className="w-4 h-4" />
@@ -269,7 +269,7 @@ export default function AdminManagerPage({
       {(isAddingNew || editModalItem) && (
         <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
           <div className="bg-white dark:bg-slate-800 rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 text-white flex justify-between items-center">
+            <div className="bg-gradient-to-r from-teal-600 to-cyan-600 p-4 text-white flex justify-between items-center">
               <h3 className="font-bold text-sm">
                 {isAddingNew ? 'Thêm mới Sách / Thiết bị vào Kho' : `Cập nhật thông tin: ${formData.code}`}
               </h3>
@@ -406,7 +406,7 @@ export default function AdminManagerPage({
                 </button>
                 <button
                   type="submit"
-                  className="py-2 px-5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold"
+                  className="py-2 px-5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold"
                 >
                   Lưu vào hệ thống
                 </button>

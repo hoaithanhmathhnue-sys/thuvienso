@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from './firebase/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CatalogPage from './pages/CatalogPage';
@@ -6,6 +7,7 @@ import BorrowTicketsPage from './pages/BorrowTicketsPage';
 import DashboardPage from './pages/DashboardPage';
 import AdminManagerPage from './pages/AdminManagerPage';
 import AboutPage from './pages/AboutPage';
+import LoginPage from './pages/LoginPage';
 import BorrowModal from './components/BorrowModal';
 import BorrowTicketModal from './components/BorrowTicketModal';
 import ResourceDetailModal from './components/ResourceDetailModal';
@@ -22,11 +24,15 @@ import {
 } from './data/mockStorage';
 
 export default function App() {
+  const { user, isAdmin: firebaseAdmin, isLoggedIn, loading, isConfigured } = useAuth();
+
   // App States
   const [resources, setResources] = useState(() => getStoredResources());
   const [tickets, setTickets] = useState(() => getStoredTickets());
-  const [activeTab, setActiveTab] = useState('catalog'); // 'catalog' | 'tickets' | 'dashboard' | 'admin' | 'about'
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [activeTab, setActiveTab] = useState('catalog');
+  // Khi chưa cấu hình Firebase → dùng toggle local; khi đã cấu hình → dùng role từ Firebase
+  const [localAdmin, setLocalAdmin] = useState(false);
+  const isAdmin = isConfigured ? firebaseAdmin : localAdmin;
   const [darkMode, setDarkMode] = useState(false);
   
   // Modals
@@ -107,8 +113,25 @@ export default function App() {
 
   const pendingCount = tickets.filter(t => t.status === 'Chờ duyệt').length;
 
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-50 via-cyan-50 to-emerald-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800">
+        <div className="text-center">
+          <div className="w-12 h-12 border-4 border-teal-200 border-t-teal-500 rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-sm text-teal-700 dark:text-teal-300 font-medium">Đang tải hệ thống...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Nếu Firebase đã cấu hình nhưng chưa đăng nhập → hiện trang Login
+  if (isConfigured && !isLoggedIn) {
+    return <LoginPage />;
+  }
+
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-teal-50/30 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-200">
       
       {/* Top Navbar */}
       <Navbar
@@ -117,7 +140,7 @@ export default function App() {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         isAdmin={isAdmin}
-        setIsAdmin={setIsAdmin}
+        setIsAdmin={setLocalAdmin}
         pendingCount={pendingCount}
       />
 

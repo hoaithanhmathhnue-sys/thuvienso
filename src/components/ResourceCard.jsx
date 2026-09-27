@@ -88,7 +88,7 @@ export default function ResourceCard({ resource, onBorrow, onDetail }) {
       {/* Card Content */}
       <div className="p-4 flex-1 flex flex-col">
         {/* Category Pill */}
-        <div className="flex items-center gap-1.5 text-xs text-blue-600 dark:text-blue-400 font-medium mb-1.5">
+        <div className="flex items-center gap-1.5 text-xs text-teal-600 dark:text-teal-400 font-medium mb-1.5">
           <Tag className="w-3.5 h-3.5" />
           <span className="truncate">{resource.category}</span>
         </div>
@@ -96,7 +96,7 @@ export default function ResourceCard({ resource, onBorrow, onDetail }) {
         {/* Title */}
         <h3 
           onClick={() => onDetail(resource)}
-          className="font-bold text-base text-slate-900 dark:text-white line-clamp-2 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer transition-colors leading-snug mb-2"
+          className="font-bold text-base text-slate-900 dark:text-white line-clamp-2 hover:text-teal-600 dark:hover:text-teal-400 cursor-pointer transition-colors leading-snug mb-2"
           title={resource.title}
         >
           {resource.title}
@@ -110,7 +110,7 @@ export default function ResourceCard({ resource, onBorrow, onDetail }) {
           </div>
           <div className="flex items-center justify-between text-[11px] pt-1 border-t border-slate-100 dark:border-slate-700/60">
             <span>Tồn kho: <strong className="text-slate-700 dark:text-slate-200">{resource.availableQty} / {resource.totalQty} {resource.unit}</strong></span>
-            <span>Đã mượn: <strong className="text-blue-600 dark:text-blue-400">{resource.borrowCount || 0} lượt</strong></span>
+            <span>Đã mượn: <strong className="text-teal-600 dark:text-teal-400">{resource.borrowCount || 0} lượt</strong></span>
           </div>
 
           {/* Availability progress bar */}
@@ -144,7 +144,7 @@ export default function ResourceCard({ resource, onBorrow, onDetail }) {
             onClick={() => onBorrow(resource)}
             className={`w-full py-2 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-xs ${
               isAvailable 
-                ? 'bg-blue-600 hover:bg-blue-700 active:scale-95 text-white shadow-blue-500/20' 
+                ? 'bg-teal-600 hover:bg-teal-700 active:scale-95 text-white shadow-teal-500/20' 
                 : 'bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed'
             }`}
           >

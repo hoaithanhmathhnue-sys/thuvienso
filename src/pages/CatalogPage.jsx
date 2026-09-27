@@ -79,7 +79,7 @@ export default function CatalogPage({
     <div className="space-y-8 animate-in fade-in duration-300">
       
       {/* Hero Welcome Banner */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 via-indigo-700 to-sky-800 text-white p-6 sm:p-10 shadow-xl shadow-blue-500/10">
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-700 via-teal-700 to-sky-800 text-white p-6 sm:p-10 shadow-xl shadow-teal-500/10">
         <div className="relative z-10 max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-blue-100 text-xs font-semibold border border-white/20">
             <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
@@ -103,7 +103,7 @@ export default function CatalogPage({
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Nhập tên sách, thiết bị (ví dụ: STEM, Robot, KHTN, Lịch sử...)"
-                className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white text-slate-900 text-sm shadow-md placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all"
+                className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white text-slate-900 text-sm shadow-md placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-teal-300 transition-all"
               />
               {searchTerm && (
                 <button
@@ -150,7 +150,7 @@ export default function CatalogPage({
                   onClick={() => setSelectedGroup(group)}
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                     isActive
-                      ? 'bg-blue-600 text-white shadow-sm shadow-blue-500/20'
+                      ? 'bg-teal-600 text-white shadow-sm shadow-teal-500/20'
                       : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-650'
                   }`}
                 >
@@ -167,7 +167,7 @@ export default function CatalogPage({
               onClick={() => setViewMode('grid')}
               className={`p-1.5 rounded-lg text-xs font-medium transition-all ${
                 viewMode === 'grid' 
-                  ? 'bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-xs' 
+                  ? 'bg-white dark:bg-slate-800 text-teal-600 dark:text-teal-400 shadow-xs' 
                   : 'text-slate-500 hover:text-slate-800 dark:text-slate-400'
               }`}
               title="Xem dạng lưới thẻ"
@@ -179,7 +179,7 @@ export default function CatalogPage({
               onClick={() => setViewMode('table')}
               className={`p-1.5 rounded-lg text-xs font-medium transition-all ${
                 viewMode === 'table' 
-                  ? 'bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-xs' 
+                  ? 'bg-white dark:bg-slate-800 text-teal-600 dark:text-teal-400 shadow-xs' 
                   : 'text-slate-500 hover:text-slate-800 dark:text-slate-400'
               }`}
               title="Xem dạng bảng chi tiết"
@@ -200,7 +200,7 @@ export default function CatalogPage({
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              className="w-full py-2 px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-750 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
+              className="w-full py-2 px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-750 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500 font-medium"
             >
               {RESOURCE_TYPES.map(type => (
                 <option key={type} value={type}>{type}</option>
@@ -216,7 +216,7 @@ export default function CatalogPage({
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="w-full py-2 px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-750 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
+              className="w-full py-2 px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-750 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500 font-medium"
             >
               <option value="default">Mặc định (Mới nhất)</option>
               <option value="most-borrowed">Mượn nhiều nhất</option>
@@ -231,7 +231,7 @@ export default function CatalogPage({
                 type="checkbox"
                 checked={onlyAvailable}
                 onChange={(e) => setOnlyAvailable(e.target.checked)}
-                className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                className="w-4 h-4 text-teal-600 rounded focus:ring-teal-500"
               />
               <span className="font-semibold text-slate-700 dark:text-slate-300">
                 Chỉ hiện tài nguyên còn sẵn
@@ -256,7 +256,7 @@ export default function CatalogPage({
         {/* Status Counter */}
         <div className="flex justify-between items-center text-xs text-slate-500 dark:text-slate-400 pt-1">
           <span>
-            Tìm thấy: <strong className="text-blue-600 dark:text-blue-400 font-bold">{filteredResources.length}</strong> kết quả phù hợp
+            Tìm thấy: <strong className="text-teal-600 dark:text-teal-400 font-bold">{filteredResources.length}</strong> kết quả phù hợp
           </span>
           {(searchTerm || selectedGroup !== 'Tất cả nhóm' || selectedType !== 'Tất cả loại' || onlyAvailable) && (
             <span className="italic text-[11px] text-amber-600 dark:text-amber-400">
@@ -309,7 +309,7 @@ export default function CatalogPage({
                   const isAvailable = resource.availableQty > 0;
                   return (
                     <tr key={resource.id} className="hover:bg-slate-50 dark:hover:bg-slate-750/50 transition-colors">
-                      <td className="py-3 px-4 font-mono font-bold text-blue-600 dark:text-blue-400">
+                      <td className="py-3 px-4 font-mono font-bold text-teal-600 dark:text-teal-400">
                         {resource.code}
                       </td>
                       <td className="py-3 px-4">
@@ -322,7 +322,7 @@ export default function CatalogPage({
                           <div>
                             <span 
                               onClick={() => onDetail(resource)}
-                              className="font-bold hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer block"
+                              className="font-bold hover:text-teal-600 dark:hover:text-teal-400 cursor-pointer block"
                             >
                               {resource.title}
                             </span>
@@ -370,7 +370,7 @@ export default function CatalogPage({
                             onClick={() => onBorrow(resource)}
                             className={`px-3 py-1 rounded-lg text-[11px] font-bold ${
                               isAvailable
-                                ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-xs'
+                                ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-xs'
                                 : 'bg-slate-200 dark:bg-slate-700 text-slate-400 cursor-not-allowed'
                             }`}
                           >
@@ -394,7 +394,7 @@ export default function CatalogPage({
 function EmptyState({ onReset }) {
   return (
     <div className="bg-white dark:bg-slate-800 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-700 space-y-4">
-      <div className="w-16 h-16 rounded-full bg-blue-50 dark:bg-slate-700 text-blue-500 flex items-center justify-center mx-auto">
+      <div className="w-16 h-16 rounded-full bg-teal-50 dark:bg-slate-700 text-teal-500 flex items-center justify-center mx-auto">
         <Search className="w-8 h-8" />
       </div>
       <div className="space-y-1">
@@ -408,7 +408,7 @@ function EmptyState({ onReset }) {
       <button
         type="button"
         onClick={onReset}
-        className="py-2 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-sm transition-colors"
+        className="py-2 px-4 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold shadow-sm transition-colors"
       >
         Đặt lại bộ lọc tìm kiếm
       </button>
