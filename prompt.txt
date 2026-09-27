@@ -1,99 +1,125 @@
-╔══════════════════════════════════════════════════════════════════════╗
-║           PROMPT TẠO APP THƯ VIỆN SỐ THPT HOÀNG DIỆU              ║
-╚══════════════════════════════════════════════════════════════════════╝
+Tạo cho tôi một ứng dụng web "THƯ VIỆN SỐ" quản lý thư viện trường THPT, sử dụng React 19 + Vite, Tailwind CSS v4, Firebase Authentication + Firestore. App deploy được lên Vercel.
 
-📌 MÔ TẢ DỰ ÁN:
-Tạo ứng dụng web "Thư Viện Số" cho Trường THPT Hoàng Diệu - TP.Cần Thơ.
-Hệ thống quản lý tài nguyên thư viện (sách, thiết bị dạy học) và phiếu mượn trả trực tuyến.
-
-═══════════════════════════════════════════════════════════════════════
-
-🔹 PROMPT 1 — Phân tích và Tạo app cơ bản:
-
-"Phân tích app Hệ thống quản lý thư viện:
-https://quanlythuvien.pdtstudio.store/about/gioi-thieu-he-thong-quan-ly-thu-vien.html
-Sau đó tạo cho tôi 1 app tương tự, có thể tải lên GitHub và deploy qua Vercel."
-
-═══════════════════════════════════════════════════════════════════════
-
-🔹 PROMPT 2 — Tùy chỉnh giao diện và Firebase:
-
-"Giao diện tươi sáng, nền màu xanh teal.
-Đọc thư mục SKILL FIREBASE sau đó phân quyền online và hướng dẫn cách tạo từng bước trên Firebase.
-Các dữ liệu demo đi trong danh mục tài nguyên đều cho phép thêm sửa xóa toàn bộ các chi tiết có liên quan."
-
-═══════════════════════════════════════════════════════════════════════
-
-🔹 PROMPT 3 — Thông tin tác giả:
-
-"Sử dụng các thông tin và ảnh trong thư mục public để thay đổi thông tin app và tác giả app.
-Tôi đã có link app và build trên Vercel là https://thuviensothpthoangdieu.vercel.app/
-và GitHub là https://github.com/hoaithanhmathhnue-sys/thuvienso
-Làm xong thì đẩy file lên GitHub luôn cho tôi."
-
-═══════════════════════════════════════════════════════════════════════
-
-🔹 PROMPT 4 — Tạo tài khoản Admin (Thủ thư):
-
-"Tôi muốn thủ thư là Giáo viên: Trần Thị Kim Thoa
-Trường THPT Hoàng Diệu
-mail: tranthikimthoa.c3hd@soctrang.edu.vn
-Địa chỉ: Số 1 Mạc Đĩnh Chi, phường Phú Lợi, thành phố Cần Thơ"
-
-═══════════════════════════════════════════════════════════════════════
-
-🔹 PROMPT 5 — Sửa lỗi giao diện sáng:
-
-"Lỗi giao diện nền sáng thì để chữ tương phản, màu xám rất khó nhìn, giao diện sáng không hoạt động."
-
-═══════════════════════════════════════════════════════════════════════
-
-🔹 PROMPT 6 — Đồng bộ dữ liệu Firestore:
-
-"Khi độc giả bấm mượn, bên thủ thư không thấy thông báo, có cần cấu hình Rules trên Firebase không?"
-
-═══════════════════════════════════════════════════════════════════════
-
-🔹 PROMPT 7 — Thêm chức năng CRUD:
-
-"Ở quyền Thủ thư:
-- Danh Sách & Tra Cứu Phiếu Mượn cho phép xóa các dòng thông tin, thêm sửa xóa.
-- Báo Cáo & Thống Kê cũng cho reset về 0 và cho thêm mục thêm sửa xóa các thông tin liên quan.
-- Mục Cổng Quản Trị Kho, phần đường dẫn ảnh cho phép tải lên tệp ảnh của sản phẩm."
-
-═══════════════════════════════════════════════════════════════════════
-
-🔹 PROMPT 8 — Sửa thông tin header:
-
-"Thay dòng Hotline thành Website https://hoangdieust.vn/
-Bỏ dòng Email."
-
-═══════════════════════════════════════════════════════════════════════
-
-🔹 PROMPT 9 — Sửa tên app:
-
-"Sửa lại tên app là THƯ VIỆN SỐ (cùng 1 hàng)
-THPT Hoàng Diệu - TP.Cần Thơ (cùng 1 hàng bên dưới)
-Căn chỉnh sao cho menu cân đối."
-
-═══════════════════════════════════════════════════════════════════════
-
-📋 THÔNG TIN KỸ THUẬT:
-- Framework: React 19 + Vite 8
-- Styling: Tailwind CSS v4
-- Backend: Firebase Authentication + Firestore
-- Hosting: Vercel (CI/CD từ GitHub)
-- Repository: https://github.com/hoaithanhmathhnue-sys/thuvienso
-- Live URL: https://thuviensothpthoangdieu.vercel.app/
-
-📋 THÔNG TIN TÁC GIẢ:
-- Giáo viên: Trần Thị Kim Thoa
-- Trường THPT Hoàng Diệu
-- Địa chỉ: Số 1 Mạc Đĩnh Chi, phường Phú Lợi, TP. Cần Thơ
-- Email admin: tranthikimthoa.c3hd@soctrang.edu.vn
+══════════════════════════════════════════
+THÔNG TIN TRƯỜNG & TÁC GIẢ
+══════════════════════════════════════════
+- Tên app: THƯ VIỆN SỐ
+- Trường: THPT Hoàng Diệu - TP.Cần Thơ
+- Địa chỉ: Số 1 Mạc Đĩnh Chi, phường Phú Lợi, thành phố Cần Thơ
 - Website trường: https://hoangdieust.vn/
+- Thủ thư (Admin): Trần Thị Kim Thoa
+- Email admin: tranthikimthoa.c3hd@soctrang.edu.vn
+- Logo: file logo.jpg trong thư mục public
 
-📋 FIRESTORE RULES (duy trì vĩnh viễn):
+══════════════════════════════════════════
+YÊU CẦU GIAO DIỆN
+══════════════════════════════════════════
+- Tone màu chủ đạo: teal (xanh ngọc) tươi sáng
+- Hỗ trợ Dark Mode (toggle sáng/tối)
+- Responsive: Desktop, Tablet, Mobile
+- Top banner: Website trường + Giờ phục vụ
+- Header: Logo + "THƯ VIỆN SỐ" (dòng 1) + "THPT Hoàng Diệu - TP.Cần Thơ" (dòng 2) + Navigation tabs
+- Chữ tương phản cao trên nền sáng (không dùng màu xám nhạt)
+- Hiệu ứng hover, transition mượt mà
+- Icon dùng thư viện lucide-react
+
+══════════════════════════════════════════
+PHÂN QUYỀN (2 vai trò)
+══════════════════════════════════════════
+1. BẠN ĐỌC (Độc giả) — đăng nhập bằng Google hoặc Email:
+   - Xem danh mục tài nguyên (sách, thiết bị)
+   - Tra cứu, lọc, tìm kiếm sách/thiết bị
+   - Đăng ký mượn online (chọn sách → điền form → gửi)
+   - Xem trạng thái phiếu mượn của mình
+   - Xem trang Giới thiệu
+
+2. THỦ THƯ (Admin/Librarian) — tự động nhận diện theo email:
+   - Tất cả quyền Bạn đọc
+   - Duyệt / Từ chối phiếu mượn
+   - Xác nhận trả sách/thiết bị
+   - Xóa phiếu mượn
+   - Quản trị kho: Thêm / Sửa / Xóa tài nguyên
+   - Upload ảnh sản phẩm từ máy tính (base64) hoặc URL
+   - Xem Dashboard thống kê
+   - Reset thống kê về 0
+   - Xuất dữ liệu CSV
+   - Khôi phục dữ liệu mẫu
+
+══════════════════════════════════════════
+CÁC TAB CHỨC NĂNG (5 tab)
+══════════════════════════════════════════
+
+📚 TAB 1: DANH MỤC TÀI NGUYÊN
+- Bảng hiển thị: STT, Ảnh, Mã, Tên, Nhóm, Loại, ĐVT, Tổng SL, Còn lại, Vị trí kho, Trạng thái
+- Tìm kiếm full-text theo tên/mã
+- Lọc theo nhóm: Sách thư viện / Thiết bị / Tài liệu tham khảo
+- Lọc theo loại (ví dụ: SGK, Sách tham khảo, Máy chiếu, Loa...)
+- Phân trang (10 item/trang)
+- Nút "Mượn" trên mỗi hàng → mở form đăng ký mượn
+- Form mượn: Họ tên, Loại (GV/HS), Đơn vị, SĐT, Ngày mượn, Hạn trả, Số lượng, Mục đích, Ghi chú
+- Mã phiếu tự động: PM + timestamp
+
+📋 TAB 2: DANH SÁCH PHIẾU MƯỢN
+- Bảng: Mã phiếu, Người mượn, Tài nguyên, Ngày mượn, Hạn trả, Trạng thái, Hành động
+- Trạng thái badge màu: Chờ duyệt (vàng), Đã duyệt (xanh), Đã trả (slate), Quá hạn (đỏ), Từ chối (hồng)
+- Lọc theo trạng thái
+- Tìm kiếm theo mã phiếu, tên người mượn
+- Thủ thư: Nút Duyệt ✅, Từ chối ❌, Nhận trả ↩, Xóa 🗑️
+- Khi duyệt: giảm số lượng kho; Khi trả: hoàn số lượng kho
+- Khi xóa phiếu chưa trả: tự động hoàn số lượng kho
+- Badge đếm phiếu "Chờ duyệt" trên tab
+
+📊 TAB 3: BÁO CÁO & THỐNG KÊ (Dashboard)
+- 5 KPI cards: Tổng tài nguyên, Đang cho mượn, Chờ duyệt, Quá hạn, Hoàn thành
+- Top 5 tài nguyên được mượn nhiều nhất (thanh progress bar)
+- Phân bố theo nhóm: Thiết bị / Sách / Tài liệu
+- Phân bố người mượn: Giáo viên / Học sinh
+- Cảnh báo phiếu quá hạn (thông tin liên hệ, nút xem/xóa phiếu)
+- Nút In báo cáo
+- Nút Xuất CSV
+- Thủ thư: Nút "Reset thống kê về 0" (xóa hết phiếu + reset borrowCount)
+
+🔧 TAB 4: QUẢN TRỊ KHO (Chỉ Thủ thư)
+- Bảng tài nguyên có nút Sửa ✏️ và Xóa 🗑️
+- Form Thêm mới / Sửa tài nguyên:
+  + Mã tài nguyên, Tên, Nhóm (dropdown), Loại (dropdown), ĐVT
+  + Tổng số lượng, Số lượng còn, Vị trí kho, Trạng thái
+  + Upload ảnh từ máy (chọn file, max 2MB, preview) HOẶC dán URL ảnh
+- Nút "Khôi phục dữ liệu mẫu" (reset toàn bộ kho)
+- Nút "Xuất danh sách CSV"
+- Tìm kiếm trong bảng quản trị
+
+ℹ️ TAB 5: GIỚI THIỆU
+- Thông tin trường, địa chỉ, tác giả
+- Mô tả hệ thống, công nghệ sử dụng
+- Hướng dẫn sử dụng cơ bản
+- Liên kết website trường
+
+══════════════════════════════════════════
+DỮ LIỆU MẪU (DEMO)
+══════════════════════════════════════════
+Tạo sẵn 15-20 tài nguyên mẫu gồm:
+- Nhóm "Thiết bị": Máy chiếu, Loa di động, Bảng tương tác, Micro không dây...
+- Nhóm "Sách thư viện": SGK Toán 10, SGK Ngữ văn 11, Sách tham khảo Hóa học...
+- Nhóm "Tài liệu tham khảo": Đề thi mẫu, Tài liệu bồi dưỡng HSG...
+Mỗi tài nguyên có: mã, tên, nhóm, loại, đơn vị tính, số lượng, vị trí kho, trạng thái.
+Tạo 3-5 phiếu mượn mẫu ở các trạng thái khác nhau.
+
+══════════════════════════════════════════
+FIREBASE CẤU HÌNH
+══════════════════════════════════════════
+- Authentication: Bật Google Sign-In + Email/Password
+- Firestore Collections:
+  + users: {uid, email, displayName, role, createdAt}
+  + resources: {id, code, name, group, type, unit, totalQty, availableQty, location, status, imageUrl, borrowCount}
+  + tickets: {id, ticketCode, borrowerName, borrowerType, department, phone, resourceId, resourceTitle, quantity, borrowDate, dueDate, purpose, notes, status, createdAt}
+- Real-time sync: Sử dụng onSnapshot() để đồng bộ tức thì giữa bạn đọc và thủ thư
+- Auto admin: Khi email đăng ký trùng email admin → tự động set role = "librarian"
+- Fallback: Nếu chưa cấu hình Firebase → dùng localStorage
+
+══════════════════════════════════════════
+FIRESTORE RULES (không hết hạn)
+══════════════════════════════════════════
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -111,3 +137,13 @@ service cloud.firestore {
     }
   }
 }
+
+══════════════════════════════════════════
+CÔNG NGHỆ
+══════════════════════════════════════════
+- React 19 + Vite 8
+- Tailwind CSS v4 (cấu hình dark mode bằng @custom-variant)
+- Firebase SDK (Auth + Firestore)
+- lucide-react (icons)
+- Deploy: Vercel (auto CI/CD từ GitHub)
+- Không dùng TypeScript, chỉ dùng JavaScript (.jsx)

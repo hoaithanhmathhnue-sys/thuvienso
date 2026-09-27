@@ -1,0 +1,113 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║           PROMPT TẠO APP THƯ VIỆN SỐ THPT HOÀNG DIỆU              ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+📌 MÔ TẢ DỰ ÁN:
+Tạo ứng dụng web "Thư Viện Số" cho Trường THPT Hoàng Diệu - TP.Cần Thơ.
+Hệ thống quản lý tài nguyên thư viện (sách, thiết bị dạy học) và phiếu mượn trả trực tuyến.
+
+═══════════════════════════════════════════════════════════════════════
+
+🔹 PROMPT 1 — Phân tích và Tạo app cơ bản:
+
+"Phân tích app Hệ thống quản lý thư viện:
+https://quanlythuvien.pdtstudio.store/about/gioi-thieu-he-thong-quan-ly-thu-vien.html
+Sau đó tạo cho tôi 1 app tương tự, có thể tải lên GitHub và deploy qua Vercel."
+
+═══════════════════════════════════════════════════════════════════════
+
+🔹 PROMPT 2 — Tùy chỉnh giao diện và Firebase:
+
+"Giao diện tươi sáng, nền màu xanh teal.
+Đọc thư mục SKILL FIREBASE sau đó phân quyền online và hướng dẫn cách tạo từng bước trên Firebase.
+Các dữ liệu demo đi trong danh mục tài nguyên đều cho phép thêm sửa xóa toàn bộ các chi tiết có liên quan."
+
+═══════════════════════════════════════════════════════════════════════
+
+🔹 PROMPT 3 — Thông tin tác giả:
+
+"Sử dụng các thông tin và ảnh trong thư mục public để thay đổi thông tin app và tác giả app.
+Tôi đã có link app và build trên Vercel là https://thuviensothpthoangdieu.vercel.app/
+và GitHub là https://github.com/hoaithanhmathhnue-sys/thuvienso
+Làm xong thì đẩy file lên GitHub luôn cho tôi."
+
+═══════════════════════════════════════════════════════════════════════
+
+🔹 PROMPT 4 — Tạo tài khoản Admin (Thủ thư):
+
+"Tôi muốn thủ thư là Giáo viên: Trần Thị Kim Thoa
+Trường THPT Hoàng Diệu
+mail: tranthikimthoa.c3hd@soctrang.edu.vn
+Địa chỉ: Số 1 Mạc Đĩnh Chi, phường Phú Lợi, thành phố Cần Thơ"
+
+═══════════════════════════════════════════════════════════════════════
+
+🔹 PROMPT 5 — Sửa lỗi giao diện sáng:
+
+"Lỗi giao diện nền sáng thì để chữ tương phản, màu xám rất khó nhìn, giao diện sáng không hoạt động."
+
+═══════════════════════════════════════════════════════════════════════
+
+🔹 PROMPT 6 — Đồng bộ dữ liệu Firestore:
+
+"Khi độc giả bấm mượn, bên thủ thư không thấy thông báo, có cần cấu hình Rules trên Firebase không?"
+
+═══════════════════════════════════════════════════════════════════════
+
+🔹 PROMPT 7 — Thêm chức năng CRUD:
+
+"Ở quyền Thủ thư:
+- Danh Sách & Tra Cứu Phiếu Mượn cho phép xóa các dòng thông tin, thêm sửa xóa.
+- Báo Cáo & Thống Kê cũng cho reset về 0 và cho thêm mục thêm sửa xóa các thông tin liên quan.
+- Mục Cổng Quản Trị Kho, phần đường dẫn ảnh cho phép tải lên tệp ảnh của sản phẩm."
+
+═══════════════════════════════════════════════════════════════════════
+
+🔹 PROMPT 8 — Sửa thông tin header:
+
+"Thay dòng Hotline thành Website https://hoangdieust.vn/
+Bỏ dòng Email."
+
+═══════════════════════════════════════════════════════════════════════
+
+🔹 PROMPT 9 — Sửa tên app:
+
+"Sửa lại tên app là THƯ VIỆN SỐ (cùng 1 hàng)
+THPT Hoàng Diệu - TP.Cần Thơ (cùng 1 hàng bên dưới)
+Căn chỉnh sao cho menu cân đối."
+
+═══════════════════════════════════════════════════════════════════════
+
+📋 THÔNG TIN KỸ THUẬT:
+- Framework: React 19 + Vite 8
+- Styling: Tailwind CSS v4
+- Backend: Firebase Authentication + Firestore
+- Hosting: Vercel (CI/CD từ GitHub)
+- Repository: https://github.com/hoaithanhmathhnue-sys/thuvienso
+- Live URL: https://thuviensothpthoangdieu.vercel.app/
+
+📋 THÔNG TIN TÁC GIẢ:
+- Giáo viên: Trần Thị Kim Thoa
+- Trường THPT Hoàng Diệu
+- Địa chỉ: Số 1 Mạc Đĩnh Chi, phường Phú Lợi, TP. Cần Thơ
+- Email admin: tranthikimthoa.c3hd@soctrang.edu.vn
+- Website trường: https://hoangdieust.vn/
+
+📋 FIRESTORE RULES (duy trì vĩnh viễn):
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /resources/{resourceId} {
+      allow read: if request.auth != null;
+      allow write, delete: if request.auth != null;
+    }
+    match /tickets/{ticketId} {
+      allow read: if request.auth != null;
+      allow create, update, delete: if request.auth != null;
+    }
+  }
+}
