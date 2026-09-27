@@ -34,7 +34,10 @@ import {
   createTicketOnFirestore,
   updateTicketOnFirestore,
   updateResourceOnFirestore,
-  resetFirestoreData
+  resetFirestoreData,
+  deleteTicketFromFirestore,
+  deleteResourceFromFirestore,
+  resetFirestoreStats
 } from './firebase/firestoreService';
 
 import { isFirebaseConfigured } from './firebase/config';
@@ -233,6 +236,40 @@ export default function App() {
     showToast('Đã khôi phục toàn bộ kho dữ liệu về trạng thái ban đầu!', 'success');
   };
 
+  // Handle Delete Ticket
+  const handleDeleteTicket = async (ticketId, ticket) => {
+    if (isFirebaseConfigured() && firestoreReady) {
+      await deleteTicketFromFirestore(ticketId);
+      // Hoàn trả số lượng nếu phiếu chưa trả/chưa từ chối
+      if (ticket && ticket.status !== 'Đã trả' && ticket.status !== 'Từ chối') {
+        const resource = resources.find(r => r.id === ticket.resourceId);
+        if (resource) {
+          const newAvail = Math.min(resource.totalQty, resource.availableQty + (ticket.quantity || 1));
+          await updateResourceOnFirestore({ ...resource, availableQty: newAvail, status: newAvail > 0 ? 'Còn để mượn' : resource.status });
+        }
+      }
+    } else {
+      setTickets(prev => prev.filter(t => t.id !== ticketId));
+      saveStoredTickets(tickets.filter(t => t.id !== ticketId));
+    }
+    showToast('Đã xóa phiếu mượn khỏi hệ thống!', 'info');
+  };
+
+  // Handle Reset Statistics (xóa hết phiếu + reset borrowCount)
+  const handleResetStats = async () => {
+    if (!window.confirm('Xóa toàn bộ phiếu mượn và reset thống kê về 0?\nThao tác này không thể hoàn tác!')) return;
+    if (isFirebaseConfigured() && firestoreReady) {
+      await resetFirestoreStats();
+    } else {
+      const resetResources = resources.map(r => ({ ...r, borrowCount: 0, availableQty: r.totalQty, status: 'Còn để mượn' }));
+      setResources(resetResources);
+      setTickets([]);
+      saveStoredResources(resetResources);
+      saveStoredTickets([]);
+    }
+    showToast('Đã reset toàn bộ thống kê về 0!', 'success');
+  };
+
   const pendingCount = tickets.filter(t => t.status === 'Chờ duyệt').length;
 
   // Loading state
@@ -285,6 +322,7 @@ export default function App() {
             onApproveTicket={handleApproveTicket}
             onRejectTicket={handleRejectTicket}
             onReturnTicket={handleReturnTicket}
+            onDeleteTicket={handleDeleteTicket}
           />
         )}
 
@@ -292,7 +330,10 @@ export default function App() {
           <DashboardPage
             resources={resources}
             tickets={tickets}
+            isAdmin={isAdmin}
             onViewTicket={(t) => setViewingTicket(t)}
+            onResetStats={handleResetStats}
+            onDeleteTicket={handleDeleteTicket}
           />
         )}
 

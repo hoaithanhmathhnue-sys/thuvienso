@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
   ClipboardList, 
   Search, 
@@ -15,7 +15,8 @@ import {
   Building,
   RotateCw,
   Eye,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Trash2
 } from 'lucide-react';
 import { exportDataToCsv } from '../data/mockStorage';
 
@@ -25,7 +26,8 @@ export default function BorrowTicketsPage({
   onViewTicket,
   onApproveTicket,
   onRejectTicket,
-  onReturnTicket 
+  onReturnTicket,
+  onDeleteTicket
 }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('ALL');
@@ -323,6 +325,22 @@ export default function BorrowTicketsPage({
                         >
                           <CornerDownLeft className="w-3.5 h-3.5" />
                           Nhận trả
+                        </button>
+                      )}
+
+                      {/* Admin Delete action */}
+                      {isAdmin && onDeleteTicket && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if (window.confirm(`Xóa phiếu mượn ${ticket.ticketCode}?\nThao tác này không thể hoàn tác!`)) {
+                              onDeleteTicket(ticket.id, ticket);
+                            }
+                          }}
+                          className="p-1.5 rounded-lg border border-rose-200 dark:border-rose-800 hover:bg-rose-50 dark:hover:bg-rose-950/50 text-rose-600 dark:text-rose-400"
+                          title="Xóa phiếu mượn"
+                        >
+                          <Trash2 className="w-4 h-4" />
                         </button>
                       )}
 

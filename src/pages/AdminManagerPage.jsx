@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   ShieldCheck, 
   Plus, 
@@ -377,13 +377,44 @@ export default function AdminManagerPage({
               </div>
 
               <div>
-                <label className="block font-semibold mb-1">Đường dẫn hình ảnh (URL)</label>
-                <input
-                  type="text"
-                  value={formData.image}
-                  onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700"
-                />
+                <label className="block font-semibold mb-1">Hình ảnh sản phẩm</label>
+                <div className="flex items-center gap-3">
+                  {formData.image && (
+                    <img src={formData.image} alt="Preview" className="w-16 h-16 rounded-xl object-cover border border-slate-200 dark:border-slate-600 shrink-0" />
+                  )}
+                  <div className="flex-1 space-y-2">
+                    <label className="flex items-center gap-2 py-2 px-3 rounded-xl border border-dashed border-teal-400 dark:border-teal-600 bg-teal-50 dark:bg-teal-950/30 cursor-pointer hover:bg-teal-100 dark:hover:bg-teal-950/50 transition-colors">
+                      <Upload className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                      <span className="text-teal-700 dark:text-teal-300 font-semibold">Tải ảnh lên từ máy</span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0];
+                          if (file) {
+                            if (file.size > 2 * 1024 * 1024) {
+                              alert('Ảnh quá lớn! Vui lòng chọn ảnh nhỏ hơn 2MB.');
+                              return;
+                            }
+                            const reader = new FileReader();
+                            reader.onload = (ev) => {
+                              setFormData({ ...formData, image: ev.target.result });
+                            };
+                            reader.readAsDataURL(file);
+                          }
+                        }}
+                      />
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.image}
+                      onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                      placeholder="Hoặc dán URL ảnh từ Internet..."
+                      className="w-full p-2 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-[11px]"
+                    />
+                  </div>
+                </div>
               </div>
 
               <div>

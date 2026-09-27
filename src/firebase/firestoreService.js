@@ -10,6 +10,7 @@ import {
   getDocs, 
   setDoc, 
   updateDoc, 
+  deleteDoc,
   onSnapshot, 
   query, 
   orderBy,
@@ -159,4 +160,58 @@ export const seedTicketsToFirestore = async (tickets) => {
 export const resetFirestoreData = async () => {
   await seedResourcesToFirestore(INITIAL_RESOURCES);
   await seedTicketsToFirestore(INITIAL_TICKETS);
+};
+
+// ===================================================================
+// 🗑️ DELETE — Xóa tài nguyên / phiếu mượn
+// ===================================================================
+
+// Xóa 1 phiếu mượn
+export const deleteTicketFromFirestore = async (ticketId) => {
+  try {
+    if (!isFirebaseConfigured()) return;
+    await deleteDoc(doc(db, COLLECTIONS.TICKETS, String(ticketId)));
+  } catch (err) {
+    console.error('Lỗi xóa phiếu mượn:', err);
+    throw err;
+  }
+};
+
+// Xóa 1 tài nguyên
+export const deleteResourceFromFirestore = async (resourceId) => {
+  try {
+    if (!isFirebaseConfigured()) return;
+    await deleteDoc(doc(db, COLLECTIONS.RESOURCES, String(resourceId)));
+  } catch (err) {
+    console.error('Lỗi xóa tài nguyên:', err);
+    throw err;
+  }
+};
+
+// Reset thống kê: đặt borrowCount = 0 cho tất cả resources, xóa hết tickets
+export const resetFirestoreStats = async () => {
+  try {
+    if (!isFirebaseConfigured()) return;
+    
+    // Reset borrowCount trên resources
+    const resDocs = await getDocs(collection(db, COLLECTIONS.RESOURCES));
+    const batch1 = writeBatch(db);
+    resDocs.docs.forEach(d => {
+      batch1.update(d.ref, { borrowCount: 0 });
+    });
+    await batch1.commit();
+
+    // Xóa toàn bộ tickets
+    const ticketDocs = await getDocs(collection(db, COLLECTIONS.TICKETS));
+    const batch2 = writeBatch(db);
+    ticketDocs.docs.forEach(d => {
+      batch2.delete(d.ref);
+    });
+    await batch2.commit();
+
+    console.log('✅ Đã reset thống kê về 0');
+  } catch (err) {
+    console.error('Lỗi reset thống kê:', err);
+    throw err;
+  }
 };

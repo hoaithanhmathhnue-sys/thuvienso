@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { 
   BarChart3, 
   Layers, 
@@ -11,11 +11,13 @@ import {
   Users, 
   Printer, 
   Download,
-  CalendarCheck
+  CalendarCheck,
+  RotateCcw,
+  Trash2
 } from 'lucide-react';
 import { exportDataToCsv } from '../data/mockStorage';
 
-export default function DashboardPage({ resources, tickets, onViewTicket }) {
+export default function DashboardPage({ resources, tickets, isAdmin, onViewTicket, onResetStats, onDeleteTicket }) {
   // Calculations
   const totalResourceTypes = resources.length;
   const totalPhysicalItems = resources.reduce((acc, r) => acc + (r.totalQty || 0), 0);
@@ -63,6 +65,16 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
         </div>
 
         <div className="flex items-center gap-2 no-print">
+          {isAdmin && onResetStats && (
+            <button
+              type="button"
+              onClick={onResetStats}
+              className="py-2 px-3.5 rounded-xl border border-rose-200 dark:border-rose-800 bg-white dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-rose-950/50 text-xs font-semibold text-rose-600 dark:text-rose-400 flex items-center gap-1.5 shadow-xs transition-colors"
+            >
+              <RotateCcw className="w-4 h-4" />
+              Reset thống kê về 0
+            </button>
+          )}
           <button
             type="button"
             onClick={handlePrintDashboard}
@@ -302,13 +314,29 @@ export default function DashboardPage({ resources, tickets, onViewTicket }) {
                 <div className="text-[11px] text-slate-700 dark:text-slate-400 truncate">{t.resourceTitle}</div>
                 <div className="pt-1 flex justify-between items-center text-[11px]">
                   <span className="text-slate-500">SĐT: {t.phone}</span>
-                  <button
-                    type="button"
-                    onClick={() => onViewTicket(t)}
-                    className="text-teal-600 hover:underline font-semibold"
-                  >
-                    Xem phiếu ›
-                  </button>
+                  <div className="flex items-center gap-2">
+                    {isAdmin && onDeleteTicket && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (window.confirm(`Xóa phiếu ${t.ticketCode}?`)) {
+                            onDeleteTicket(t.id, t);
+                          }
+                        }}
+                        className="text-rose-500 hover:text-rose-700 font-semibold"
+                        title="Xóa phiếu"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => onViewTicket(t)}
+                      className="text-teal-600 hover:underline font-semibold"
+                    >
+                      Xem phiếu ›
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
