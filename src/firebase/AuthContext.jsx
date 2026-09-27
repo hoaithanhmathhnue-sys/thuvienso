@@ -1,4 +1,4 @@
-﻿// ===================================================================
+// ===================================================================
 // 🔐 Firebase Auth Context — Quản lý xác thực & phân quyền
 // ===================================================================
 import React, { createContext, useContext, useState, useEffect } from 'react';
@@ -21,6 +21,12 @@ export const ROLES = {
   READER: 'reader',       // Độc giả / Học sinh / Giáo viên
   LIBRARIAN: 'librarian', // Thủ thư (Admin)
 };
+
+// 🛡️ Danh sách email được tự động gán quyền Thủ thư (Admin)
+// Khi email này đăng nhập lần đầu → tự động có quyền librarian
+const ADMIN_EMAILS = [
+  'tranthikimthoa.c3hd@soctrang.edu.vn',
+];
 
 // Hook sử dụng Auth
 export const useAuth = () => {
@@ -59,20 +65,29 @@ export function AuthProvider({ children }) {
       const userDocRef = doc(db, 'users', firebaseUser.uid);
       const existingDoc = await getDoc(userDocRef);
       
+      // Tự động gán quyền Thủ thư cho email trong danh sách ADMIN_EMAILS
+      const autoRole = ADMIN_EMAILS.includes(firebaseUser.email?.toLowerCase())
+        ? ROLES.LIBRARIAN
+        : role;
+
       if (!existingDoc.exists()) {
         await setDoc(userDocRef, {
           uid: firebaseUser.uid,
           email: firebaseUser.email,
           displayName: firebaseUser.displayName || '',
           photoURL: firebaseUser.photoURL || '',
-          role: role,
+          role: autoRole,
           createdAt: serverTimestamp(),
           lastLoginAt: serverTimestamp()
         });
       } else {
-        await setDoc(userDocRef, {
-          lastLoginAt: serverTimestamp()
-        }, { merge: true });
+        // Nếu email admin nhưng role đang là reader → nâng cấp lên librarian
+        const currentData = existingDoc.data();
+        const updateData = { lastLoginAt: serverTimestamp() };
+        if (ADMIN_EMAILS.includes(firebaseUser.email?.toLowerCase()) && currentData.role !== ROLES.LIBRARIAN) {
+          updateData.role = ROLES.LIBRARIAN;
+        }
+        await setDoc(userDocRef, updateData, { merge: true });
       }
     } catch (err) {
       console.error('Lỗi lưu thông tin người dùng:', err);

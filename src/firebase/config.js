@@ -11,17 +11,17 @@ import { getFirestore } from 'firebase/firestore';
 
 // 🔑 Cấu hình Firebase — Lấy từ Firebase Console
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.firebasestorage.app",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyClqnSKILmZykguH-Fqjwb5VfU_3Mch7Ys",
+  authDomain: "thu-vien-truong-hoc-544a7.firebaseapp.com",
+  projectId: "thu-vien-truong-hoc-544a7",
+  storageBucket: "thu-vien-truong-hoc-544a7.firebasestorage.app",
+  messagingSenderId: "306798699777",
+  appId: "1:306798699777:web:a8251f554a154156146700"
 };
 
-// Kiểm tra đã cấu hình chưa
+// Kiểm tra đã cấu hình chưa (đã cấu hình = true)
 export const isFirebaseConfigured = () => {
-  return firebaseConfig.apiKey !== "YOUR_API_KEY" && firebaseConfig.apiKey !== "";
+  return firebaseConfig.apiKey && firebaseConfig.apiKey.length > 10 && !firebaseConfig.apiKey.startsWith("YOUR_");
 };
 
 // Khởi tạo Firebase App
