@@ -238,21 +238,28 @@ export default function App() {
 
   // Handle Delete Ticket
   const handleDeleteTicket = async (ticketId, ticket) => {
-    if (isFirebaseConfigured() && firestoreReady) {
-      await deleteTicketFromFirestore(ticketId);
-      // Hoàn trả số lượng nếu phiếu chưa trả/chưa từ chối
-      if (ticket && ticket.status !== 'Đã trả' && ticket.status !== 'Từ chối') {
-        const resource = resources.find(r => r.id === ticket.resourceId);
-        if (resource) {
-          const newAvail = Math.min(resource.totalQty, resource.availableQty + (ticket.quantity || 1));
-          await updateResourceOnFirestore({ ...resource, availableQty: newAvail, status: newAvail > 0 ? 'Còn để mượn' : resource.status });
+    try {
+      if (isFirebaseConfigured() && firestoreReady) {
+        await deleteTicketFromFirestore(ticketId);
+        // Hoàn trả số lượng nếu phiếu chưa trả/chưa từ chối
+        if (ticket && ticket.status !== 'Đã trả' && ticket.status !== 'Từ chối') {
+          const resource = resources.find(r => r.id === ticket.resourceId);
+          if (resource) {
+            const newAvail = Math.min(resource.totalQty, resource.availableQty + (ticket.quantity || 1));
+            await updateResourceOnFirestore({ ...resource, availableQty: newAvail, status: newAvail > 0 ? 'Còn để mượn' : resource.status });
+          }
         }
+      } else {
+        // Offline mode: cập nhật local
+        const newTickets = tickets.filter(t => t.id !== ticketId);
+        setTickets(newTickets);
+        saveStoredTickets(newTickets);
       }
-    } else {
-      setTickets(prev => prev.filter(t => t.id !== ticketId));
-      saveStoredTickets(tickets.filter(t => t.id !== ticketId));
+      showToast('Đã xóa phiếu mượn khỏi hệ thống!', 'info');
+    } catch (err) {
+      console.error('Lỗi xóa phiếu:', err);
+      showToast('Lỗi xóa phiếu! Kiểm tra Firestore Rules đã cho phép delete chưa.', 'error');
     }
-    showToast('Đã xóa phiếu mượn khỏi hệ thống!', 'info');
   };
 
   // Handle Reset Statistics (xóa hết phiếu + reset borrowCount)
